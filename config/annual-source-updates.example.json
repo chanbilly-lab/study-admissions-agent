@@ -1,0 +1,54 @@
+{
+  "schema_version": "annual.source.schedule.1",
+  "schedule_id": "admissions_annual_refresh",
+  "revision": 1,
+  "enabled": false,
+  "start_cycle_year": 2026,
+  "timezone": "Asia/Shanghai",
+  "month": 11,
+  "day": 1,
+  "hour": 9,
+  "minute": 0,
+  "poll_interval_seconds": 3600,
+  "max_consecutive_failures": 5,
+  "targets": [
+    {
+      "reference_key": "zj_province_cutoffs",
+      "dataset_type": "province_cutoffs",
+      "country": "CN",
+      "pathway": "ordinary_gaokao",
+      "region_key": "cn_region_11",
+      "subject_category": "普通类",
+      "target_year_offset": 0,
+      "source_hints": ["zj_cutoffs_2026"]
+    },
+    {
+      "reference_key": "zj_admission_observations",
+      "dataset_type": "admission_observations",
+      "country": "CN",
+      "pathway": "ordinary_gaokao",
+      "region_key": "cn_region_11",
+      "subject_category": "普通类",
+      "target_year_offset": 0,
+      "source_hints": []
+    },
+    {
+      "reference_key": "cambridge_requirements",
+      "dataset_type": "entry_requirements",
+      "country": "GB",
+      "pathway": "uk_undergraduate",
+      "institution_ref": "cambridge",
+      "target_year_offset": 1,
+      "source_hints": ["cam_international", "cam_entry", "cam_ucas"]
+    },
+    {
+      "reference_key": "manchester_requirements",
+      "dataset_type": "entry_requirements",
+      "country": "GB",
+      "pathway": "uk_undergraduate",
+      "institution_ref": "manchester",
+      "target_year_offset": 1,
+      "source_hints": ["man_courses", "man_international", "man_china"]
+    }
+  ]
+}

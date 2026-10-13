@@ -1,0 +1,8 @@
+{
+  "institution": "DEMO_T16_INSTITUTION",
+  "is_synthetic": true,
+  "summary": "DEMO_合成证据：仅测试定位，不是真实招生要求。",
+  "condition": "DEMO_缺少成绩且没有已审核后补政策时，结果保持 unknown。",
+  "english": "DEMO_Synthetic excerpt; no real university facts.",
+  "markup": "DEMO_<script>do_not_execute()</script>"
+}

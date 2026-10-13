@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "filters": {
+    "drop_private_input": {
+      "()": "services.api.app.audit.logging.SafeLogFilter"
+    }
+  },
+  "formatters": {
+    "closed_event": {
+      "()": "services.api.app.audit.logging.SafeLogFormatter"
+    }
+  },
+  "handlers": {
+    "safe_console": {
+      "class": "logging.StreamHandler",
+      "stream": "ext://sys.stderr",
+      "filters": ["drop_private_input"],
+      "formatter": "closed_event"
+    }
+  },
+  "root": {
+    "level": "INFO",
+    "handlers": ["safe_console"]
+  },
+  "loggers": {
+    "admissions": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "admissions.audit": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "uvicorn": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "uvicorn.access": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "uvicorn.error": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "httpx": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "httpcore": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "sqlalchemy": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "sqlalchemy.engine": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "sqlalchemy.engine.Engine": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "sqlalchemy.pool": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "fastapi": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    },
+    "starlette": {
+      "level": "INFO",
+      "handlers": ["safe_console"],
+      "propagate": false
+    }
+  }
+}

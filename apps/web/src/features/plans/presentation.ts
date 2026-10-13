@@ -1,0 +1,3 @@
+export const actionLabels:Record<string,string>={VERIFY_UNKNOWN:'核验未知依据',VERIFY_HISTORY:'重新核验历史来源',REVIEW_INELIGIBLE:'核对不满足项',PREPARE_MATERIALS:'准备申请材料',OBTAIN_ACHIEVED:'取得明确实得记录',RECHECK_CONDITIONS:'重新检查目标条件',SELF_DIRECTED_STUDY:'本人自定学习安排'}
+export const conflictLabels:Record<string,string>={CAPACITY_REQUIRED:'每周容量未知',ESTIMATE_REQUIRED:'任务估时未知',CAPACITY_EXCEEDED:'容量不足，任务未排入',DEPENDENCY_BLOCKED:'前置任务未排完',INTERNAL_GOAL_CONFLICT:'不能在内部目标前完成',DEADLINE_UNRESOLVED:'官方期限未核验'}
+export const statusLabels:Record<string,string>={ready:'容量方案可确认',partial:'部分任务未排入',blocked:'尚不能安排',scheduled:'已分配时段',milestone:'零工时里程碑（仍需本人完成声明）',draft:'未确认草案',confirmed:'本人已确认'}

@@ -1,0 +1,57 @@
+# Preserve the exact original input bytes checked by verify_originals.py.
+Codex_升学智能体_首次开发Prompt.txt -text
+升学咨询智能体_开发方案与审查.md -text
+
+# Generated contracts use byte comparison; Windows checkout must keep LF.
+packages/contracts/v2/openapi.json text eol=lf
+packages/contracts/v2/generated.ts text eol=lf
+packages/contracts/v2/identity/openapi.json text eol=lf
+packages/contracts/v2/identity/generated.ts text eol=lf
+
+# T16 evidence fixtures keep exact source bytes and reproducible locations.
+data/fixtures/evidence/DEMO_T16_original.json -text
+
+# T20 public read contracts also require byte-stable LF checkout.
+packages/contracts/v2/public_catalog/openapi.json text eol=lf
+packages/contracts/v2/public_catalog/generated.ts text eol=lf
+
+# T21 explicit admin protocol, independent of the frozen profiles.
+packages/contracts/v2/admin/openapi.json text eol=lf
+packages/contracts/v2/admin/generated.ts text eol=lf
+
+# T22 independent review/publication protocol.
+packages/contracts/v2/admin_review/openapi.json text eol=lf
+packages/contracts/v2/admin_review/generated.ts text eol=lf
+
+# T23 private profile snapshot protocol.
+packages/contracts/v2/profiles/openapi.json text eol=lf
+packages/contracts/v2/profiles/generated.ts text eol=lf
+
+# T28 independent private assessment protocol.
+packages/contracts/v2/assessments/openapi.json text eol=lf
+packages/contracts/v2/assessments/generated.ts text eol=lf
+
+# T32 private preparation confirmation protocol.
+packages/contracts/v2/plans/openapi.json text eol=lf
+packages/contracts/v2/plans/generated.ts text eol=lf
+
+# T35 explicit replacement suggestions and bounded private history.
+packages/contracts/v2/revisions/openapi.json text eol=lf
+packages/contracts/v2/revisions/generated.ts text eol=lf
+
+# T36 independent opted-in private inbox protocol.
+packages/contracts/v2/notifications/openapi.json text eol=lf
+packages/contracts/v2/notifications/generated.ts text eol=lf
+
+# T38 fixed offline QA goldens use an exact SHA across Windows checkout.
+data/evals/qa/t38_golden.json text eol=lf
+
+# T39 finite public QA wire keeps reproducible LF artifacts.
+packages/contracts/v2/qa/openapi.json text eol=lf
+packages/contracts/v2/qa/generated.ts text eol=lf
+
+packages/contracts/v2/rights/** text eol=lf
+
+# T42 Linux container entrypoints/configuration must survive Windows checkout.
+deploy/docker/** text eol=lf
+deploy/compose.generic.yaml text eol=lf

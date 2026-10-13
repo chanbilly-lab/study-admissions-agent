@@ -1,0 +1,78 @@
+{
+  "schema_version": "t47.design.1",
+  "is_synthetic": true,
+  "executed": false,
+  "manual_domain_review": false,
+  "cases": [
+    {
+      "id": "DEMO_missing_grade",
+      "scenario": "无适用后补成绩缺失",
+      "expected": "unknown",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_failed_subject",
+      "scenario": "已审合成单科不满足",
+      "expected": "ineligible",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_conditional_policy",
+      "scenario": "完整已审合成后补条件期限",
+      "expected": "conditional",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_satisfied_rule",
+      "scenario": "完整合成要求满足",
+      "expected": "eligible",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_wrong_year",
+      "scenario": "跨年度事实",
+      "expected": "unknown",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_foreign_owner",
+      "scenario": "非本人资料",
+      "expected": "forbidden",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_withdrawn_source",
+      "scenario": "撤回来源",
+      "expected": "unavailable",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_stale_profile",
+      "scenario": "旧画像不是当前资格",
+      "expected": "historical_only",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_restore_after_delete",
+      "scenario": "恢复A后重放删除B",
+      "expected": "private_content_unavailable",
+      "status": "not_run",
+      "actual": null
+    },
+    {
+      "id": "DEMO_forged_citation",
+      "scenario": "伪造引用",
+      "expected": "answer_rejected",
+      "status": "not_run",
+      "actual": null
+    }
+  ]
+}

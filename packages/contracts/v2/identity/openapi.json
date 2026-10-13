@@ -1,0 +1,5186 @@
+{
+  "components": {
+    "schemas": {
+      "AcceptGrantInput": {
+        "additionalProperties": false,
+        "properties": {
+          "confirmed": {
+            "const": true,
+            "title": "Confirmed",
+            "type": "boolean"
+          },
+          "expected_version": {
+            "minimum": 1.0,
+            "title": "Expected Version",
+            "type": "integer"
+          },
+          "sharing_policy_hash": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sharing Policy Hash",
+            "type": "string"
+          },
+          "sharing_policy_version": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Sharing Policy Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "confirmed",
+          "expected_version",
+          "sharing_policy_version",
+          "sharing_policy_hash"
+        ],
+        "title": "AcceptGrantInput",
+        "type": "object"
+      },
+      "AdmissionData": {
+        "additionalProperties": false,
+        "properties": {
+          "age_assurance": {
+            "enum": [
+              "unknown",
+              "declared"
+            ],
+            "title": "Age Assurance",
+            "type": "string"
+          },
+          "age_band": {
+            "anyOf": [
+              {
+                "const": "18_plus",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Age Band"
+          },
+          "consent_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Consent Id"
+          },
+          "consent_status": {
+            "enum": [
+              "not_confirmed",
+              "active",
+              "withdrawn",
+              "invalidated"
+            ],
+            "title": "Consent Status",
+            "type": "string"
+          },
+          "core_consultation_allowed": {
+            "title": "Core Consultation Allowed",
+            "type": "boolean"
+          },
+          "declaration_expires_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Declaration Expires At"
+          },
+          "declared_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Declared At"
+          },
+          "is_synthetic": {
+            "title": "Is Synthetic",
+            "type": "boolean"
+          },
+          "notice_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notice Id"
+          },
+          "notice_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notice Version"
+          },
+          "policy_version": {
+            "title": "Policy Version",
+            "type": "string"
+          },
+          "private_business_available": {
+            "const": false,
+            "title": "Private Business Available",
+            "type": "boolean"
+          },
+          "readiness": {
+            "title": "Readiness",
+            "type": "boolean"
+          },
+          "reason": {
+            "enum": [
+              "allowed",
+              "processing_disabled",
+              "age_missing",
+              "age_expired",
+              "notice_changed",
+              "policy_changed",
+              "consent_missing",
+              "consent_withdrawn",
+              "consent_invalidated",
+              "role_missing"
+            ],
+            "title": "Reason",
+            "type": "string"
+          },
+          "revision": {
+            "minimum": 0.0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "revision",
+          "age_band",
+          "age_assurance",
+          "declared_at",
+          "declaration_expires_at",
+          "policy_version",
+          "notice_id",
+          "notice_version",
+          "consent_id",
+          "consent_status",
+          "core_consultation_allowed",
+          "reason",
+          "readiness",
+          "is_synthetic",
+          "private_business_available"
+        ],
+        "title": "AdmissionData",
+        "type": "object"
+      },
+      "AgeDeclarationInput": {
+        "additionalProperties": false,
+        "properties": {
+          "age_band": {
+            "enum": [
+              "unknown",
+              "under_14",
+              "14_17",
+              "18_plus"
+            ],
+            "title": "Age Band",
+            "type": "string"
+          },
+          "confirmed": {
+            "const": true,
+            "title": "Confirmed",
+            "type": "boolean"
+          },
+          "expected_revision": {
+            "minimum": 0.0,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "notice_id": {
+            "format": "uuid",
+            "title": "Notice Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "age_band",
+          "confirmed",
+          "notice_id",
+          "expected_revision"
+        ],
+        "title": "AgeDeclarationInput",
+        "type": "object"
+      },
+      "AuthCsrfData": {
+        "additionalProperties": false,
+        "properties": {
+          "csrf_token": {
+            "maxLength": 43,
+            "minLength": 43,
+            "pattern": "^[A-Za-z0-9_-]{43}$",
+            "title": "Csrf Token",
+            "type": "string"
+          },
+          "expires_at": {
+            "format": "date-time",
+            "title": "Expires At",
+            "type": "string"
+          }
+        },
+        "required": [
+          "csrf_token",
+          "expires_at"
+        ],
+        "title": "AuthCsrfData",
+        "type": "object"
+      },
+      "AuthLogoutData": {
+        "additionalProperties": false,
+        "properties": {
+          "logged_out": {
+            "const": true,
+            "title": "Logged Out",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "logged_out"
+        ],
+        "title": "AuthLogoutData",
+        "type": "object"
+      },
+      "AuthSessionData": {
+        "additionalProperties": false,
+        "properties": {
+          "authenticated": {
+            "const": true,
+            "title": "Authenticated",
+            "type": "boolean"
+          },
+          "expires_at": {
+            "format": "date-time",
+            "title": "Expires At",
+            "type": "string"
+          },
+          "is_synthetic": {
+            "title": "Is Synthetic",
+            "type": "boolean"
+          },
+          "private_business_available": {
+            "const": false,
+            "title": "Private Business Available",
+            "type": "boolean"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "authenticated",
+          "user_id",
+          "expires_at",
+          "is_synthetic",
+          "private_business_available"
+        ],
+        "title": "AuthSessionData",
+        "type": "object"
+      },
+      "CoreConsentInput": {
+        "additionalProperties": false,
+        "properties": {
+          "confirmed": {
+            "const": true,
+            "title": "Confirmed",
+            "type": "boolean"
+          },
+          "expected_revision": {
+            "minimum": 0.0,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "notice_id": {
+            "format": "uuid",
+            "title": "Notice Id",
+            "type": "string"
+          },
+          "purpose": {
+            "const": "core_consultation",
+            "title": "Purpose",
+            "type": "string"
+          }
+        },
+        "required": [
+          "purpose",
+          "notice_id",
+          "confirmed",
+          "expected_revision"
+        ],
+        "title": "CoreConsentInput",
+        "type": "object"
+      },
+      "CreateGrantInput": {
+        "additionalProperties": false,
+        "properties": {
+          "actions": {
+            "items": {
+              "enum": [
+                "read",
+                "list"
+              ],
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Actions",
+            "type": "array"
+          },
+          "confirmed": {
+            "const": true,
+            "title": "Confirmed",
+            "type": "boolean"
+          },
+          "expected_resource_version": {
+            "minimum": 1.0,
+            "title": "Expected Resource Version",
+            "type": "integer"
+          },
+          "expected_revision": {
+            "minimum": 0.0,
+            "title": "Expected Revision",
+            "type": "integer"
+          },
+          "expires_at": {
+            "format": "date-time",
+            "title": "Expires At",
+            "type": "string"
+          },
+          "fields": {
+            "items": {
+              "enum": [
+                "status",
+                "version"
+              ],
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 1,
+            "title": "Fields",
+            "type": "array"
+          },
+          "grantee_user_id": {
+            "format": "uuid",
+            "title": "Grantee User Id",
+            "type": "string"
+          },
+          "owner_consent_id": {
+            "format": "uuid",
+            "title": "Owner Consent Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "format": "uuid",
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "resource_type": {
+            "enum": [
+              "profile",
+              "plan",
+              "attachment",
+              "export",
+              "job"
+            ],
+            "title": "Resource Type",
+            "type": "string"
+          },
+          "sharing_policy_hash": {
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Sharing Policy Hash",
+            "type": "string"
+          },
+          "sharing_policy_version": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Sharing Policy Version",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_type",
+          "resource_id",
+          "expected_resource_version",
+          "grantee_user_id",
+          "fields",
+          "actions",
+          "expires_at",
+          "confirmed",
+          "expected_revision",
+          "owner_consent_id",
+          "sharing_policy_version",
+          "sharing_policy_hash"
+        ],
+        "title": "CreateGrantInput",
+        "type": "object"
+      },
+      "Envelope_AdmissionData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AdmissionData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[AdmissionData]",
+        "type": "object"
+      },
+      "Envelope_AuthCsrfData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AuthCsrfData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[AuthCsrfData]",
+        "type": "object"
+      },
+      "Envelope_AuthLogoutData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AuthLogoutData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[AuthLogoutData]",
+        "type": "object"
+      },
+      "Envelope_AuthSessionData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/AuthSessionData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[AuthSessionData]",
+        "type": "object"
+      },
+      "Envelope_FoundationConfig_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/FoundationConfig"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[FoundationConfig]",
+        "type": "object"
+      },
+      "Envelope_GrantListData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GrantListData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[GrantListData]",
+        "type": "object"
+      },
+      "Envelope_GrantMutationData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GrantMutationData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[GrantMutationData]",
+        "type": "object"
+      },
+      "Envelope_Page_OfferingReference__": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Page_OfferingReference_"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[Page[OfferingReference]]",
+        "type": "object"
+      },
+      "Envelope_PrivacyNoticeData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PrivacyNoticeData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[PrivacyNoticeData]",
+        "type": "object"
+      },
+      "Envelope_SharingPolicyData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/SharingPolicyData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[SharingPolicyData]",
+        "type": "object"
+      },
+      "ErrorBody": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "enum": [
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "NOT_FOUND",
+              "METHOD_NOT_ALLOWED",
+              "CONFLICT",
+              "VALIDATION_ERROR",
+              "INVALID_CURSOR",
+              "TOO_MANY_REQUESTS",
+              "SERVICE_UNAVAILABLE",
+              "INTERNAL_ERROR"
+            ],
+            "title": "Code",
+            "type": "string"
+          },
+          "details": {
+            "items": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            },
+            "title": "Details",
+            "type": "array"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id",
+          "details"
+        ],
+        "title": "ErrorBody",
+        "type": "object"
+      },
+      "ErrorDetail": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "field_path": {
+            "title": "Field Path",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "field_path",
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail",
+        "type": "object"
+      },
+      "ErrorEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorBody"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "ErrorEnvelope",
+        "type": "object"
+      },
+      "FoundationConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "api_version": {
+            "const": "v2",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "app_environment": {
+            "enum": [
+              "development",
+              "test",
+              "production"
+            ],
+            "title": "App Environment",
+            "type": "string"
+          },
+          "business_available": {
+            "const": false,
+            "title": "Business Available",
+            "type": "boolean"
+          },
+          "contract_stage": {
+            "const": "foundation",
+            "title": "Contract Stage",
+            "type": "string"
+          },
+          "data_mode": {
+            "enum": [
+              "demo",
+              "verified"
+            ],
+            "title": "Data Mode",
+            "type": "string"
+          },
+          "entry_year": {
+            "title": "Entry Year",
+            "type": "null"
+          },
+          "live_available": {
+            "const": false,
+            "title": "Live Available",
+            "type": "boolean"
+          },
+          "model_mode": {
+            "enum": [
+              "disabled",
+              "mock"
+            ],
+            "title": "Model Mode",
+            "type": "string"
+          },
+          "query_role": {
+            "enum": [
+              "demo_only",
+              "published_readonly"
+            ],
+            "title": "Query Role",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "v2.t03",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "supported_province": {
+            "title": "Supported Province",
+            "type": "null"
+          },
+          "supported_scope": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 0,
+            "title": "Supported Scope",
+            "type": "array"
+          }
+        },
+        "required": [
+          "api_version",
+          "schema_version",
+          "contract_stage",
+          "app_environment",
+          "query_role",
+          "data_mode",
+          "model_mode",
+          "live_available",
+          "business_available",
+          "supported_scope",
+          "supported_province",
+          "entry_year"
+        ],
+        "title": "FoundationConfig",
+        "type": "object"
+      },
+      "GrantData": {
+        "additionalProperties": false,
+        "properties": {
+          "accepted_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Accepted At"
+          },
+          "access_active": {
+            "title": "Access Active",
+            "type": "boolean"
+          },
+          "actions": {
+            "items": {
+              "enum": [
+                "read",
+                "list"
+              ],
+              "type": "string"
+            },
+            "title": "Actions",
+            "type": "array"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "expires_at": {
+            "format": "date-time",
+            "title": "Expires At",
+            "type": "string"
+          },
+          "fields": {
+            "items": {
+              "enum": [
+                "status",
+                "version"
+              ],
+              "type": "string"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "grantee_user_id": {
+            "format": "uuid",
+            "title": "Grantee User Id",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "is_synthetic": {
+            "title": "Is Synthetic",
+            "type": "boolean"
+          },
+          "owner_user_id": {
+            "format": "uuid",
+            "title": "Owner User Id",
+            "type": "string"
+          },
+          "resource_id": {
+            "format": "uuid",
+            "title": "Resource Id",
+            "type": "string"
+          },
+          "resource_type": {
+            "enum": [
+              "profile",
+              "plan",
+              "attachment",
+              "export",
+              "job"
+            ],
+            "title": "Resource Type",
+            "type": "string"
+          },
+          "resource_version": {
+            "minimum": 1.0,
+            "title": "Resource Version",
+            "type": "integer"
+          },
+          "revoked_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Revoked At"
+          },
+          "sharing_policy_version": {
+            "title": "Sharing Policy Version",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "pending",
+              "accepted",
+              "revoked"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "version": {
+            "minimum": 1.0,
+            "title": "Version",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "resource_id",
+          "resource_type",
+          "resource_version",
+          "owner_user_id",
+          "grantee_user_id",
+          "fields",
+          "actions",
+          "created_at",
+          "expires_at",
+          "accepted_at",
+          "revoked_at",
+          "state",
+          "version",
+          "sharing_policy_version",
+          "is_synthetic",
+          "access_active"
+        ],
+        "title": "GrantData",
+        "type": "object"
+      },
+      "GrantListData": {
+        "additionalProperties": false,
+        "properties": {
+          "actor_declaration_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Actor Declaration Id"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/GrantData"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "owner_consent_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Owner Consent Id"
+          },
+          "page": {
+            "$ref": "#/components/schemas/PageInfo"
+          },
+          "revision": {
+            "minimum": 0.0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "sharing_available": {
+            "title": "Sharing Available",
+            "type": "boolean"
+          },
+          "total": {
+            "minimum": 0.0,
+            "title": "Total",
+            "type": "integer"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "revision",
+          "actor_declaration_id",
+          "owner_consent_id",
+          "sharing_available",
+          "total",
+          "items",
+          "page"
+        ],
+        "title": "GrantListData",
+        "type": "object"
+      },
+      "GrantMutationData": {
+        "additionalProperties": false,
+        "properties": {
+          "grant": {
+            "$ref": "#/components/schemas/GrantData"
+          },
+          "revision": {
+            "minimum": 0.0,
+            "title": "Revision",
+            "type": "integer"
+          },
+          "user_id": {
+            "format": "uuid",
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "revision",
+          "grant"
+        ],
+        "title": "GrantMutationData",
+        "type": "object"
+      },
+      "Meta": {
+        "additionalProperties": false,
+        "properties": {
+          "api_version": {
+            "const": "v2",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "data_as_of": {
+            "title": "Data As Of",
+            "type": "null"
+          },
+          "data_mode": {
+            "enum": [
+              "demo",
+              "verified"
+            ],
+            "title": "Data Mode",
+            "type": "string"
+          },
+          "model_mode": {
+            "enum": [
+              "disabled",
+              "mock"
+            ],
+            "title": "Model Mode",
+            "type": "string"
+          },
+          "profile_mode": {
+            "title": "Profile Mode",
+            "type": "null"
+          },
+          "profile_version_id": {
+            "title": "Profile Version Id",
+            "type": "null"
+          },
+          "release_id": {
+            "title": "Release Id",
+            "type": "null"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "ruleset_version": {
+            "title": "Ruleset Version",
+            "type": "null"
+          }
+        },
+        "required": [
+          "api_version",
+          "request_id",
+          "data_as_of",
+          "profile_version_id",
+          "release_id",
+          "ruleset_version",
+          "profile_mode",
+          "data_mode",
+          "model_mode"
+        ],
+        "title": "Meta",
+        "type": "object"
+      },
+      "OfferingReference": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "OfferingReference",
+        "type": "object"
+      },
+      "PageInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          },
+          "limit": {
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "maxLength": 512,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "limit",
+          "next_cursor",
+          "has_more"
+        ],
+        "title": "PageInfo",
+        "type": "object"
+      },
+      "Page_OfferingReference_": {
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OfferingReference"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "page": {
+            "$ref": "#/components/schemas/PageInfo"
+          }
+        },
+        "required": [
+          "items",
+          "page"
+        ],
+        "title": "Page[OfferingReference]",
+        "type": "object"
+      },
+      "PrivacyAgePolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "age_14_17": {
+            "const": "private_disabled",
+            "title": "Age 14 17",
+            "type": "string"
+          },
+          "age_18_plus": {
+            "const": "self_declaration_and_confirmation",
+            "title": "Age 18 Plus",
+            "type": "string"
+          },
+          "declaration_is_verification": {
+            "const": false,
+            "title": "Declaration Is Verification",
+            "type": "boolean"
+          },
+          "guardian_verification_available": {
+            "const": false,
+            "title": "Guardian Verification Available",
+            "type": "boolean"
+          },
+          "under_14": {
+            "const": "public_only",
+            "title": "Under 14",
+            "type": "string"
+          },
+          "unknown": {
+            "const": "public_only",
+            "title": "Unknown",
+            "type": "string"
+          }
+        },
+        "required": [
+          "under_14",
+          "age_14_17",
+          "age_18_plus",
+          "unknown",
+          "guardian_verification_available",
+          "declaration_is_verification"
+        ],
+        "title": "PrivacyAgePolicy",
+        "type": "object"
+      },
+      "PrivacyNoticeData": {
+        "additionalProperties": false,
+        "properties": {
+          "age_policy": {
+            "$ref": "#/components/schemas/PrivacyAgePolicy"
+          },
+          "is_synthetic": {
+            "title": "Is Synthetic",
+            "type": "boolean"
+          },
+          "notice_hash": {
+            "title": "Notice Hash",
+            "type": "string"
+          },
+          "notice_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notice Id"
+          },
+          "notice_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notice Version"
+          },
+          "policy_version": {
+            "title": "Policy Version",
+            "type": "string"
+          },
+          "purposes": {
+            "items": {
+              "const": "core_consultation",
+              "type": "string"
+            },
+            "title": "Purposes",
+            "type": "array"
+          },
+          "readiness": {
+            "title": "Readiness",
+            "type": "boolean"
+          },
+          "readiness_reason": {
+            "enum": [
+              "processing_disabled",
+              "test_fixture_ready"
+            ],
+            "title": "Readiness Reason",
+            "type": "string"
+          },
+          "retention_policy": {
+            "$ref": "#/components/schemas/PrivacyRetentionPolicy"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          }
+        },
+        "required": [
+          "policy_version",
+          "notice_id",
+          "notice_version",
+          "notice_hash",
+          "text",
+          "is_synthetic",
+          "readiness",
+          "readiness_reason",
+          "purposes",
+          "age_policy",
+          "retention_policy"
+        ],
+        "title": "PrivacyNoticeData",
+        "type": "object"
+      },
+      "PrivacyRetentionPolicy": {
+        "additionalProperties": false,
+        "properties": {
+          "audit_authorization_max_months": {
+            "const": 24,
+            "title": "Audit Authorization Max Months",
+            "type": "integer"
+          },
+          "backup_max_days": {
+            "const": 35,
+            "title": "Backup Max Days",
+            "type": "integer"
+          },
+          "cleanup_implemented": {
+            "const": false,
+            "title": "Cleanup Implemented",
+            "type": "boolean"
+          },
+          "file_types": {
+            "items": {
+              "enum": [
+                "pdf",
+                "utf8_csv",
+                "json"
+              ],
+              "type": "string"
+            },
+            "title": "File Types",
+            "type": "array"
+          },
+          "max_file_bytes": {
+            "const": 10485760,
+            "title": "Max File Bytes",
+            "type": "integer"
+          },
+          "online_deletion_max_days": {
+            "const": 30,
+            "title": "Online Deletion Max Days",
+            "type": "integer"
+          },
+          "private_data_max_months": {
+            "const": 24,
+            "title": "Private Data Max Months",
+            "type": "integer"
+          },
+          "sanitized_logs_max_days": {
+            "const": 30,
+            "title": "Sanitized Logs Max Days",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "file_types",
+          "max_file_bytes",
+          "private_data_max_months",
+          "online_deletion_max_days",
+          "sanitized_logs_max_days",
+          "audit_authorization_max_months",
+          "backup_max_days",
+          "cleanup_implemented"
+        ],
+        "title": "PrivacyRetentionPolicy",
+        "type": "object"
+      },
+      "SharingPolicyData": {
+        "additionalProperties": false,
+        "properties": {
+          "guardian_verification_available": {
+            "const": false,
+            "title": "Guardian Verification Available",
+            "type": "boolean"
+          },
+          "is_synthetic": {
+            "title": "Is Synthetic",
+            "type": "boolean"
+          },
+          "max_duration_seconds": {
+            "const": 2592000,
+            "title": "Max Duration Seconds",
+            "type": "integer"
+          },
+          "policy_version": {
+            "title": "Policy Version",
+            "type": "string"
+          },
+          "private_business_available": {
+            "const": false,
+            "title": "Private Business Available",
+            "type": "boolean"
+          },
+          "readiness_reason": {
+            "enum": [
+              "disabled",
+              "synthetic_test_ready"
+            ],
+            "title": "Readiness Reason",
+            "type": "string"
+          },
+          "scope_matrix": {
+            "items": {
+              "$ref": "#/components/schemas/SharingScopeData"
+            },
+            "title": "Scope Matrix",
+            "type": "array"
+          },
+          "sharing_available": {
+            "title": "Sharing Available",
+            "type": "boolean"
+          },
+          "text": {
+            "title": "Text",
+            "type": "string"
+          },
+          "text_sha256": {
+            "title": "Text Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "policy_version",
+          "text",
+          "text_sha256",
+          "is_synthetic",
+          "sharing_available",
+          "readiness_reason",
+          "max_duration_seconds",
+          "scope_matrix",
+          "guardian_verification_available",
+          "private_business_available"
+        ],
+        "title": "SharingPolicyData",
+        "type": "object"
+      },
+      "SharingScopeData": {
+        "additionalProperties": false,
+        "properties": {
+          "actions": {
+            "items": {
+              "enum": [
+                "read",
+                "list"
+              ],
+              "type": "string"
+            },
+            "title": "Actions",
+            "type": "array"
+          },
+          "fields": {
+            "items": {
+              "enum": [
+                "status",
+                "version"
+              ],
+              "type": "string"
+            },
+            "title": "Fields",
+            "type": "array"
+          },
+          "resource_type": {
+            "enum": [
+              "profile",
+              "plan",
+              "attachment",
+              "export",
+              "job"
+            ],
+            "title": "Resource Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource_type",
+          "fields",
+          "actions"
+        ],
+        "title": "SharingScopeData",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "CsrfHeader": {
+        "in": "header",
+        "name": "X-CSRF-Token",
+        "type": "apiKey"
+      },
+      "LoginBindingCookie": {
+        "in": "cookie",
+        "name": "__Host-admissions-login",
+        "type": "apiKey"
+      },
+      "RequestOrigin": {
+        "description": "Must exactly match the server-registered application origin",
+        "in": "header",
+        "name": "Origin",
+        "type": "apiKey"
+      },
+      "SessionCookie": {
+        "in": "cookie",
+        "name": "__Host-admissions-session",
+        "type": "apiKey"
+      }
+    }
+  },
+  "info": {
+    "description": "显式认证配置；登录不开放真实画像、申请或业务权限。",
+    "title": "升学咨询 T09 identity",
+    "version": "v2.t09"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/access-grants": {
+      "get": {
+        "operationId": "listV2AccessGrants",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "direction",
+            "required": false,
+            "schema": {
+              "default": "issued",
+              "enum": [
+                "issued",
+                "received"
+              ],
+              "title": "Direction",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "after_id",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "After Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_GrantListData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "SessionCookie": []
+          }
+        ],
+        "summary": "List Grants"
+      },
+      "post": {
+        "operationId": "createV2AccessGrant",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateGrantInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_GrantMutationData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CsrfHeader": [],
+            "RequestOrigin": [],
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Create Grant"
+      }
+    },
+    "/access-grants/{grant_id}": {
+      "delete": {
+        "operationId": "revokeV2AccessGrant",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "grant_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Grant Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_GrantMutationData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CsrfHeader": [],
+            "RequestOrigin": [],
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Revoke Grant"
+      }
+    },
+    "/access-grants/{grant_id}/accept": {
+      "post": {
+        "operationId": "acceptV2AccessGrant",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "grant_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Grant Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AcceptGrantInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_GrantMutationData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CsrfHeader": [],
+            "RequestOrigin": [],
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Accept Grant"
+      }
+    },
+    "/auth/callback": {
+      "get": {
+        "operationId": "completeV2Login",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "code",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 4096,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Code"
+            }
+          },
+          {
+            "in": "query",
+            "name": "state",
+            "required": true,
+            "schema": {
+              "maxLength": 512,
+              "minLength": 32,
+              "pattern": "^[A-Za-z0-9_-]+$",
+              "title": "State",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "error",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 128,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Error"
+            }
+          },
+          {
+            "in": "query",
+            "name": "iss",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 2048,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Iss"
+            }
+          }
+        ],
+        "responses": {
+          "303": {
+            "description": "Login complete; fixed application root",
+            "headers": {
+              "Location": {
+                "description": "Server-fixed destination",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Set-Cookie": {
+                "description": "Opaque Secure HttpOnly cookie",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "LoginBindingCookie": []
+          }
+        ],
+        "summary": "Callback"
+      }
+    },
+    "/auth/csrf": {
+      "get": {
+        "operationId": "getV2Csrf",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_AuthCsrfData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Csrf"
+      }
+    },
+    "/auth/login": {
+      "get": {
+        "operationId": "startV2Login",
+        "responses": {
+          "302": {
+            "description": "Fixed IdP authorization redirect",
+            "headers": {
+              "Location": {
+                "description": "Server-fixed destination",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "Set-Cookie": {
+                "description": "Opaque Secure HttpOnly cookie",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Login"
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "operationId": "logoutV2Session",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_AuthLogoutData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CsrfHeader": [],
+            "RequestOrigin": [],
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Logout"
+      }
+    },
+    "/auth/session": {
+      "get": {
+        "operationId": "getV2Session",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_AuthSessionData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Session"
+      }
+    },
+    "/config": {
+      "get": {
+        "operationId": "getV2Config",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_FoundationConfig_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Config"
+      }
+    },
+    "/me/admission": {
+      "get": {
+        "operationId": "getV2Admission",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_AdmissionData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Admission"
+      }
+    },
+    "/me/age-declarations": {
+      "post": {
+        "operationId": "declareV2Age",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AgeDeclarationInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_AdmissionData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CsrfHeader": [],
+            "RequestOrigin": [],
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Declare Age"
+      }
+    },
+    "/me/consents": {
+      "post": {
+        "operationId": "confirmV2CoreConsent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CoreConsentInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_AdmissionData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CsrfHeader": [],
+            "RequestOrigin": [],
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Confirm Core"
+      }
+    },
+    "/me/consents/{consent_id}": {
+      "delete": {
+        "operationId": "withdrawV2CoreConsent",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "consent_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Consent Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_AdmissionData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "CsrfHeader": [],
+            "RequestOrigin": [],
+            "SessionCookie": []
+          }
+        ],
+        "summary": "Withdraw Core"
+      }
+    },
+    "/offerings": {
+      "get": {
+        "operationId": "listV2Offerings",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 512,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_Page_OfferingReference__"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List Offerings"
+      }
+    },
+    "/privacy/notices/current": {
+      "get": {
+        "operationId": "getV2PrivacyNotice",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_PrivacyNoticeData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Current Notice"
+      }
+    },
+    "/sharing/policy": {
+      "get": {
+        "operationId": "getV2SharingPolicy",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_SharingPolicyData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Policy"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/v2"
+    }
+  ]
+}

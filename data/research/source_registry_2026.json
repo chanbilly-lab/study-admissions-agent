@@ -1,0 +1,5042 @@
+{
+  "schema": "study.research.source-registry.v1",
+  "task_id": "T50A",
+  "target_reference_year": 2026,
+  "registered_as_of": "2026-10-01",
+  "timezone": "Asia/Hong_Kong",
+  "candidate_only": true,
+  "is_synthetic": false,
+  "nationwide_collection_complete": false,
+  "reviewed_fact_count": 0,
+  "published_fact_count": 0,
+  "imported_institution_count": 0,
+  "expected_total": null,
+  "coverage_ratio": null,
+  "personalized_scope": "one_configured_province_ordinary_gaokao_plus_uk_undergraduate",
+  "sources": [
+    {
+      "id": "moe_historical_authority_navigation",
+      "publisher": "教育部",
+      "title": "2021年研考省级信息发布渠道（历史身份导航）",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "hostname": "www.moe.gov.cn",
+      "source_role": "navigation",
+      "region_keys": [
+        "cn_region_01",
+        "cn_region_02",
+        "cn_region_03",
+        "cn_region_04",
+        "cn_region_05",
+        "cn_region_06",
+        "cn_region_07",
+        "cn_region_08",
+        "cn_region_09",
+        "cn_region_10",
+        "cn_region_11",
+        "cn_region_12",
+        "cn_region_13",
+        "cn_region_14",
+        "cn_region_15",
+        "cn_region_16",
+        "cn_region_17",
+        "cn_region_18",
+        "cn_region_19",
+        "cn_region_20",
+        "cn_region_21",
+        "cn_region_22",
+        "cn_region_23",
+        "cn_region_24",
+        "cn_region_25",
+        "cn_region_26",
+        "cn_region_27",
+        "cn_region_28",
+        "cn_region_29",
+        "cn_region_30",
+        "cn_region_31"
+      ],
+      "dataset_types": [
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "中央页面的省份/官方网站列；仅历史主体线索，原用途为研考",
+      "observed_period_label": "2021年考试渠道；发布元数据2020-12-23",
+      "time_basis": "publication_year",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "本轮正文打开返回redirect loop；官方搜索可见历史网站表，未捕获正文。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "只由官方历史导航发现网址，不是2026高考依据。本轮31个下游端点分别打开一次，结果见各authority记录；2026域名/主体权限、年份与许可仍须正式核验。"
+    },
+    {
+      "id": "chsi_authority_navigation",
+      "publisher": "教育部学生服务与素质发展中心（阳光高考）",
+      "title": "2021省级考试招生机构官方标识导航",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/moe/202106/20210617/2078308929.html",
+      "hostname": "gaokao.chsi.com.cn",
+      "source_role": "navigation",
+      "region_keys": [
+        "cn_region_01",
+        "cn_region_02",
+        "cn_region_03",
+        "cn_region_04",
+        "cn_region_05",
+        "cn_region_06",
+        "cn_region_07",
+        "cn_region_08",
+        "cn_region_09",
+        "cn_region_10",
+        "cn_region_11",
+        "cn_region_12",
+        "cn_region_13",
+        "cn_region_14",
+        "cn_region_15",
+        "cn_region_16",
+        "cn_region_17",
+        "cn_region_18",
+        "cn_region_19",
+        "cn_region_20",
+        "cn_region_21",
+        "cn_region_22",
+        "cn_region_23",
+        "cn_region_24",
+        "cn_region_25",
+        "cn_region_26",
+        "cn_region_27",
+        "cn_region_28",
+        "cn_region_29",
+        "cn_region_30",
+        "cn_region_31"
+      ],
+      "dataset_types": [
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://gaokao.chsi.com.cn/gkxx/zc/moe/202106/20210617/2078308929.html",
+      "identity_basis_locator": "官方搜索标题及省级网站表；本轮仅输入框/脚本挑战",
+      "observed_period_label": "2021",
+      "time_basis": "publication_year",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "浏览工具只得输入框；普通HTTP请求返回脚本挑战，无正文，未绕过。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "历史导航候选，不当2026政策或域名当前可达证明；无自动获取。"
+    },
+    {
+      "id": "moe_institutions_2026",
+      "publisher": "教育部",
+      "title": "全国高等学校名单（2026候选入口）",
+      "url": "https://www.moe.gov.cn/jyb_xxgk/s5743/s5744/202606/t20260618_1441074.html",
+      "hostname": "www.moe.gov.cn",
+      "source_role": "institution_directory",
+      "region_keys": [
+        "cn_region_01",
+        "cn_region_02",
+        "cn_region_03",
+        "cn_region_04",
+        "cn_region_05",
+        "cn_region_06",
+        "cn_region_07",
+        "cn_region_08",
+        "cn_region_09",
+        "cn_region_10",
+        "cn_region_11",
+        "cn_region_12",
+        "cn_region_13",
+        "cn_region_14",
+        "cn_region_15",
+        "cn_region_16",
+        "cn_region_17",
+        "cn_region_18",
+        "cn_region_19",
+        "cn_region_20",
+        "cn_region_21",
+        "cn_region_22",
+        "cn_region_23",
+        "cn_region_24",
+        "cn_region_25",
+        "cn_region_26",
+        "cn_region_27",
+        "cn_region_28",
+        "cn_region_29",
+        "cn_region_30",
+        "cn_region_31"
+      ],
+      "dataset_types": [
+        "institution_directory"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xxgk/s5743/s5744/202606/t20260618_1441074.html",
+      "identity_basis_locator": "官方搜索的名单标题；P02明确范围不含港澳台",
+      "observed_period_label": "2026（官方搜索元数据，待正文核验）",
+      "time_basis": "institution_directory",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "本轮多次浏览超时；普通HTTP读取异常，未读取附件/学校行。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "仅大陆名录候选；原正文/附件、层次、数量及版本待核验。导入学校行0；不作港澳台目录，不据此计算事实覆盖。"
+    },
+    {
+      "id": "authority_cn_region_01",
+      "publisher": "北京省级考试机构（正式名称/现主体待核验）",
+      "title": "北京考试招生历史入口候选",
+      "url": "https://www.bjeea.cn/",
+      "hostname": "www.bjeea.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_01"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的北京行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_02",
+      "publisher": "天津省级考试机构（正式名称/现主体待核验）",
+      "title": "天津考试招生历史入口候选",
+      "url": "http://www.zhaokao.net/",
+      "hostname": "www.zhaokao.net",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_02"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的天津行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_03",
+      "publisher": "河北省级考试机构（正式名称/现主体待核验）",
+      "title": "河北考试招生历史入口候选",
+      "url": "http://www.hebeea.edu.cn/",
+      "hostname": "www.hebeea.edu.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_03"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的河北行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_04",
+      "publisher": "山西省级考试机构（正式名称/现主体待核验）",
+      "title": "山西考试招生历史入口候选",
+      "url": "http://www.sxkszx.cn/index.html",
+      "hostname": "www.sxkszx.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_04"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的山西行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_05",
+      "publisher": "内蒙古省级考试机构（正式名称/现主体待核验）",
+      "title": "内蒙古考试招生历史入口候选",
+      "url": "https://www.nm.zsks.cn/",
+      "hostname": "www.nm.zsks.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_05"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的内蒙古行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_06",
+      "publisher": "辽宁省级考试机构（正式名称/现主体待核验）",
+      "title": "辽宁考试招生历史入口候选",
+      "url": "http://www.lnzsks.com/",
+      "hostname": "www.lnzsks.com",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_06"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的辽宁行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_07",
+      "publisher": "吉林省级考试机构（正式名称/现主体待核验）",
+      "title": "吉林考试招生历史入口候选",
+      "url": "http://www.jleea.edu.cn/",
+      "hostname": "www.jleea.edu.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_07"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的吉林行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_08",
+      "publisher": "黑龙江省级考试机构（正式名称/现主体待核验）",
+      "title": "黑龙江考试招生历史入口候选",
+      "url": "https://lzk.hl.cn/",
+      "hostname": "lzk.hl.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_08"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的黑龙江行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_09",
+      "publisher": "上海市教育考试院",
+      "title": "上海市教育考试院",
+      "url": "http://www.shmeea.edu.cn/page/index.html",
+      "hostname": "www.shmeea.edu.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_09"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "http://www.shmeea.edu.cn/page/index.html",
+      "identity_basis_locator": "标题及正文新闻署名；未取得主办页脚",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_10",
+      "publisher": "江苏省教育考试院",
+      "title": "江苏省教育考试院",
+      "url": "https://www.jseea.cn/",
+      "hostname": "www.jseea.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_10"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.jseea.cn/",
+      "identity_basis_locator": "页脚版权所有主体",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_11",
+      "publisher": "浙江省级考试机构（正式名称/现主体待核验）",
+      "title": "浙江考试招生历史入口候选",
+      "url": "https://www.zjzs.net/moban/index/index.html",
+      "hostname": "www.zjzs.net",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_11"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的浙江行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "partial_page",
+      "checked_on": "2026-10-01",
+      "failure_reason": "Document标题/0正文，仅外壳。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_12",
+      "publisher": "安徽省级考试机构（正式名称/现主体待核验）",
+      "title": "安徽考试招生历史入口候选",
+      "url": "https://www.ahzsks.cn/index.htm",
+      "hostname": "www.ahzsks.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_12"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的安徽行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "HTTP 502 Bad Gateway",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_13",
+      "publisher": "福建省教育考试院",
+      "title": "福建省教育考试院",
+      "url": "https://www.eeafj.cn/",
+      "hostname": "www.eeafj.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_13"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.eeafj.cn/",
+      "identity_basis_locator": "欢迎语及页脚官方网站/版权所有",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_14",
+      "publisher": "江西省级考试机构（正式名称/现主体待核验）",
+      "title": "江西考试招生历史入口候选",
+      "url": "http://www.jxeea.cn/",
+      "hostname": "www.jxeea.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_14"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的江西行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_15",
+      "publisher": "山东省教育招生考试院",
+      "title": "山东省教育招生考试院官网",
+      "url": "http://www.sdzk.cn/",
+      "hostname": "www.sdzk.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_15"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "http://www.sdzk.cn/",
+      "identity_basis_locator": "页脚版权所有及复制/转载/镜像限制",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。 页脚明确未经授权不得复制、转载或建立镜像；使用权未审，获取关闭。"
+    },
+    {
+      "id": "authority_cn_region_16",
+      "publisher": "河南省级考试机构（正式名称/现主体待核验）",
+      "title": "河南考试招生历史入口候选",
+      "url": "http://www.heao.gov.cn/",
+      "hostname": "www.heao.gov.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_16"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的河南行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "not accessible via this tool",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_17",
+      "publisher": "湖北省级考试机构（正式名称/现主体待核验）",
+      "title": "湖北考试招生历史入口候选",
+      "url": "http://www.hbea.edu.cn/",
+      "hostname": "www.hbea.edu.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_17"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的湖北行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "HTTP 503 Service Unavailable",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_18",
+      "publisher": "湖南省级考试机构（正式名称/现主体待核验）",
+      "title": "湖南考试招生历史入口候选",
+      "url": "http://jyt.hunan.gov.cn/sjyt/hnsjyksy/",
+      "hostname": "jyt.hunan.gov.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_18"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的湖南行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "partial_page",
+      "checked_on": "2026-10-01",
+      "failure_reason": "仅标题与页面加载中，未取得正文。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_19",
+      "publisher": "广东省级考试机构（正式名称/现主体待核验）",
+      "title": "广东考试招生历史入口候选",
+      "url": "http://eea.gd.gov.cn/",
+      "hostname": "eea.gd.gov.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_19"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的广东行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_20",
+      "publisher": "广西省级考试机构（正式名称/现主体待核验）",
+      "title": "广西考试招生历史入口候选",
+      "url": "https://www.gxeea.cn/",
+      "hostname": "www.gxeea.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_20"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的广西行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_21",
+      "publisher": "海南省级考试机构（正式名称/现主体待核验）",
+      "title": "海南考试招生历史入口候选",
+      "url": "http://ea.hainan.gov.cn/",
+      "hostname": "ea.hainan.gov.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_21"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的海南行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_22",
+      "publisher": "重庆省级考试机构（正式名称/现主体待核验）",
+      "title": "重庆考试招生历史入口候选",
+      "url": "http://www.cqksy.cn/site/index.html",
+      "hostname": "www.cqksy.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_22"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的重庆行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "not accessible via this tool",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_23",
+      "publisher": "四川省级考试机构（正式名称/现主体待核验）",
+      "title": "四川考试招生历史入口候选",
+      "url": "https://www.sceea.cn/",
+      "hostname": "www.sceea.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_23"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的四川行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_24",
+      "publisher": "贵州省级考试机构（正式名称/现主体待核验）",
+      "title": "贵州考试招生历史入口候选",
+      "url": "http://www.eaagz.org.cn/",
+      "hostname": "www.eaagz.org.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_24"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的贵州行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "not accessible via this tool",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_25",
+      "publisher": "云南省级考试机构（正式名称/现主体待核验）",
+      "title": "云南考试招生历史入口候选",
+      "url": "https://www.ynzs.cn/",
+      "hostname": "www.ynzs.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_25"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的云南行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_26",
+      "publisher": "西藏省级考试机构（正式名称/现主体待核验）",
+      "title": "西藏考试招生历史入口候选",
+      "url": "http://zsks.edu.xizang.gov.cn/",
+      "hostname": "zsks.edu.xizang.gov.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_26"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的西藏行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_27",
+      "publisher": "陕西招生考试信息网（机构运营主体待核验）",
+      "title": "陕西招生考试信息网",
+      "url": "http://www.sneac.com/",
+      "hostname": "www.sneac.com",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_27"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "http://www.sneac.com/",
+      "identity_basis_locator": "页面标题/版权仅署网站名；另一考试院域名仅作链接，未跟随",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_28",
+      "publisher": "甘肃省教育考试院",
+      "title": "首页_甘肃省教育考试院",
+      "url": "https://www.ganseea.cn/",
+      "hostname": "www.ganseea.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_28"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.ganseea.cn/",
+      "identity_basis_locator": "页脚版权所有",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_29",
+      "publisher": "青海省级考试机构（正式名称/现主体待核验）",
+      "title": "青海考试招生历史入口候选",
+      "url": "http://www.qhjyks.com/",
+      "hostname": "www.qhjyks.com",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_29"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的青海行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "not accessible via this tool",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_30",
+      "publisher": "宁夏省级考试机构（正式名称/现主体待核验）",
+      "title": "宁夏考试招生历史入口候选",
+      "url": "https://www.nxjyks.cn/",
+      "hostname": "www.nxjyks.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_30"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/jyb_xwfb/moe_1946/fj_2020/202012/t20201223_507093.html",
+      "identity_basis_locator": "教育部历史渠道表的宁夏行/官方网站列；本轮官方搜索可见",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "工具400 Timeout fetching",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "authority_cn_region_31",
+      "publisher": "新疆维吾尔自治区教育考试院",
+      "title": "新疆教育考试院",
+      "url": "http://www.xjzk.gov.cn/",
+      "hostname": "www.xjzk.gov.cn",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_31"
+      ],
+      "dataset_types": [
+        "province_cutoff",
+        "score_distribution",
+        "admission_statistics",
+        "admission_policy"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "http://www.xjzk.gov.cn/",
+      "identity_basis_locator": "页脚该院主办",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原网址由教育部2020历史研考渠道发现；本轮每个端点仅打开一次，未跟随链接、未改HTTP为HTTPS或绕过限制。入口身份/访问线索不等于2026高考事实；年度、许可及正式主体审核待完成。"
+    },
+    {
+      "id": "hk_institution_directory",
+      "publisher": "香港教育局",
+      "title": "Institutions",
+      "url": "https://www.edb.gov.hk/en/edu-system/postsecondary/local-higher-edu/institutions/index.html",
+      "hostname": "www.edb.gov.hk",
+      "source_role": "institution_directory",
+      "region_keys": [
+        "hk"
+      ],
+      "dataset_types": [
+        "institution_directory"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://www.edb.gov.hk/en/edu-system/postsecondary/local-higher-edu/institutions/index.html",
+      "identity_basis_locator": "Institutions正文、UGC注释、degree-awarding名单及副学位另链",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "已读目录页面，不等于2026版本或本科项目全量导入；未记录院校数量/行数据。"
+    },
+    {
+      "id": "hk_admissions_navigation",
+      "publisher": "香港教育局",
+      "title": "Publicly-funded Programmes",
+      "url": "https://www.edb.gov.hk/en/edu-system/postsecondary/local-higher-edu/publicly-funded-programmes/index.html",
+      "hostname": "www.edb.gov.hk",
+      "source_role": "admissions_entry",
+      "region_keys": [
+        "hk"
+      ],
+      "dataset_types": [
+        "admission_policy",
+        "admission_statistics"
+      ],
+      "pathways": [
+        "hk_local_admissions"
+      ],
+      "identity_basis_url": "https://www.edb.gov.hk/en/edu-system/postsecondary/local-higher-edu/publicly-funded-programmes/index.html",
+      "identity_basis_locator": "Admissions段的JUPAS/HKDSE与院校自主招生说明",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "只读招生路径入口；无明确2026适用年。统计类型为后续拟核验任务，不表示本页已公布统计。"
+    },
+    {
+      "id": "hk_non_jupas_navigation",
+      "publisher": "香港教育局",
+      "title": "Common Questions",
+      "url": "https://lifeplanning.edb.gov.hk/en/about-us/common-questions.html",
+      "hostname": "lifeplanning.edb.gov.hk",
+      "source_role": "admissions_entry",
+      "region_keys": [
+        "hk"
+      ],
+      "dataset_types": [
+        "admission_policy"
+      ],
+      "pathways": [
+        "hk_local_admissions"
+      ],
+      "identity_basis_url": "https://lifeplanning.edb.gov.hk/en/about-us/common-questions.html",
+      "identity_basis_locator": "问2 Non-JUPAS、问3 HKDSE",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "未知适用年；未核验具体申请身份/资格。"
+    },
+    {
+      "id": "mo_institution_directory",
+      "publisher": "澳门教育及青年发展局高教合作交流处",
+      "title": "院校資訊｜在澳學習",
+      "url": "https://portal.dsedj.gov.mo/webdsejspace/site/studyinmacau/tc/campus-information.html",
+      "hostname": "portal.dsedj.gov.mo",
+      "source_role": "institution_directory",
+      "region_keys": [
+        "mo"
+      ],
+      "dataset_types": [
+        "institution_directory"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://portal.dsedj.gov.mo/webdsejspace/site/studyinmacau/tc/campus-information.html",
+      "identity_basis_locator": "高等院校/高校聯絡資料及页脚发布主体",
+      "observed_period_label": null,
+      "time_basis": "unknown",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "partial_page",
+      "checked_on": "2026-10-01",
+      "failure_reason": "正文栏目可读，院校表行未被提取；只登记入口。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "未知适用年度；Copyright2024不是目录发布日期或2026适用证明。"
+    },
+    {
+      "id": "mo_mainland_recommended_2026",
+      "publisher": "澳门教育及青年发展局",
+      "title": "2026年招收澳門保送生之普通高校名單",
+      "url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/EnrollmentBrief.jsp",
+      "hostname": "appl2.dsedj.gov.mo",
+      "source_role": "admissions_entry",
+      "region_keys": [
+        "mo"
+      ],
+      "dataset_types": [
+        "admission_policy"
+      ],
+      "pathways": [
+        "mo_local_admissions",
+        "mo_recommended_to_mainland"
+      ],
+      "identity_basis_url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/EnrollmentBrief.jsp",
+      "identity_basis_locator": "标题及招生簡章表头的2026年",
+      "observed_period_label": "2026年",
+      "time_basis": "admissions_year",
+      "source_year": 2026,
+      "year_mapping_status": "explicit_gregorian",
+      "year_basis_url": "https://appl2.dsedj.gov.mo/ChinaUEnrollment/UPublic/EnrollmentBrief.jsp",
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "澳门学生保送内地高校参与招生入口；学校所在地为内地，不能填澳门高校目录。未导入名额/要求/分数/日期。"
+    },
+    {
+      "id": "mo_mainland_pathway_guide_2026",
+      "publisher": "澳门教育及青年发展局（页面列合作主办部门）",
+      "title": "澳門學生入讀內地高校升學指引",
+      "url": "https://portal.dsedj.gov.mo/webdsejspace/site/ees/zh-TW/home.jsp?con=union-admissions-office",
+      "hostname": "portal.dsedj.gov.mo",
+      "source_role": "admissions_entry",
+      "region_keys": [
+        "mo"
+      ],
+      "dataset_types": [
+        "admission_policy",
+        "admission_statistics"
+      ],
+      "pathways": [
+        "mo_local_admissions",
+        "mo_recommended_to_mainland"
+      ],
+      "identity_basis_url": "https://portal.dsedj.gov.mo/webdsejspace/site/ees/zh-TW/home.jsp?con=union-admissions-office",
+      "identity_basis_locator": "全国联招/澳门保送/四校联考路径及末注基於2026年情况",
+      "observed_period_label": "2026年情况",
+      "time_basis": "admissions_year",
+      "source_year": 2026,
+      "year_mapping_status": "explicit_gregorian",
+      "year_basis_url": "https://portal.dsedj.gov.mo/webdsejspace/site/ees/zh-TW/home.jsp?con=union-admissions-office",
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "只登记路径入口，不把身份适用或表内数值变成资格规则；统计是拟核验资料用途，不表示已导入。"
+    },
+    {
+      "id": "tw_institution_directory",
+      "publisher": "台湾教育部门（页面署教育部及云林科技大学）",
+      "title": "114學年度大專校院一覽表",
+      "url": "https://udb.moe.edu.tw/ulist/",
+      "hostname": "udb.moe.edu.tw",
+      "source_role": "institution_directory",
+      "region_keys": [
+        "tw"
+      ],
+      "dataset_types": [
+        "institution_directory"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://udb.moe.edu.tw/ulist/",
+      "identity_basis_locator": "学校查询/地区/体制/学位筛选；范围见同站ulist/about",
+      "observed_period_label": "114學年度",
+      "time_basis": "academic_year",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "保留原始学年度；未核验与2026目标的有效期映射，不用114+1911替代适用性审查。未导入学校行。"
+    },
+    {
+      "id": "tw_admissions_math_navigation",
+      "publisher": "台湾教育部门网站，页面署大学招生委员会联合会",
+      "title": "大學招生參採數學考科查詢系統",
+      "url": "https://srecruit.moe.edu.tw/mathsys/",
+      "hostname": "srecruit.moe.edu.tw",
+      "source_role": "admissions_entry",
+      "region_keys": [
+        "tw"
+      ],
+      "dataset_types": [
+        "admission_policy"
+      ],
+      "pathways": [
+        "tw_local_admissions"
+      ],
+      "identity_basis_url": "https://srecruit.moe.edu.tw/mathsys/",
+      "identity_basis_locator": "入口首段115學年度及繁星/申请/分发路径；控件另有116/117",
+      "observed_period_label": "115學年度（页面混其他学年选项）",
+      "time_basis": "academic_year",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "仅读入口与链接，不查询校系。不把混合学年页面整体定为2026，不执行历法换算或资格评估。"
+    },
+    {
+      "id": "tw_uac_navigation",
+      "publisher": "大学考试入学分发委员会（官方部门链接的招生主体）",
+      "title": "大學考試入學分發委員會",
+      "url": "https://www.uac.edu.tw/",
+      "hostname": "www.uac.edu.tw",
+      "source_role": "admissions_entry",
+      "region_keys": [
+        "tw"
+      ],
+      "dataset_types": [
+        "admission_policy",
+        "admission_statistics"
+      ],
+      "pathways": [
+        "tw_local_admissions"
+      ],
+      "identity_basis_url": "https://srecruit.moe.edu.tw/mathsys/",
+      "identity_basis_locator": "教育部门mathsys入口的考分會链接；目标正文115学年度重要时程/招生导航",
+      "observed_period_label": "115學年度，另混116及历年公告",
+      "time_basis": "academic_year",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "发布主体是委员会，不标教育部门直接发布。未打开附表，不导入时程/成绩；2026映射未知。"
+    },
+    {
+      "id": "hainan_curriculum_2026_candidate",
+      "publisher": "海南大学计算机科学与技术学院",
+      "title": "2026级计算机科学与技术培养方案入口",
+      "url": "https://cs.hainanu.edu.cn/info/1066/13080.htm",
+      "hostname": "cs.hainanu.edu.cn",
+      "source_role": "curriculum_entry",
+      "region_keys": [
+        "cn_region_21"
+      ],
+      "dataset_types": [
+        "curriculum"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://cs.hainanu.edu.cn/info/1066/13080.htm",
+      "identity_basis_locator": "P02官方研究记录的原页面/标题；本轮复取失败",
+      "observed_period_label": "2026级（P02原记录，当前未复核）",
+      "time_basis": "entry_cohort",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "本轮浏览打开超时；未重新核验正文/附件。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "单校单专业来源候选，不代表海南所有专业；P02观察保留原样，不导入学分/学制等事实。"
+    },
+    {
+      "id": "bipt_outcomes_2023_metadata",
+      "publisher": "北京石油化工学院",
+      "title": "2023届毕业生就业质量年度报告发布页",
+      "url": "https://www.bipt.edu.cn/xxgkai/de2442e6881f45c18a8a660a36f4fce9.htm",
+      "hostname": "www.bipt.edu.cn",
+      "source_role": "outcomes_entry",
+      "region_keys": [
+        "cn_region_01"
+      ],
+      "dataset_types": [
+        "outcomes"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://www.bipt.edu.cn/xxgkai/de2442e6881f45c18a8a660a36f4fce9.htm",
+      "identity_basis_locator": "信息公开标题2023届；发布时间2024-01-05；正文iframe",
+      "observed_period_label": "2023届",
+      "time_basis": "graduation_cohort",
+      "source_year": 2023,
+      "year_mapping_status": "explicit_gregorian",
+      "year_basis_url": "https://www.bipt.edu.cn/xxgkai/de2442e6881f45c18a8a660a36f4fce9.htm",
+      "access_status": "page_read",
+      "checked_on": "2026-10-01",
+      "failure_reason": null,
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "只有旧届报告发布元数据。2026登记不改为2026届；没有国内就业数值，专业分母/人群待取得报告。"
+    },
+    {
+      "id": "bipt_outcomes_2023_pdf",
+      "publisher": "北京石油化工学院",
+      "title": "2023届报告PDF入口",
+      "url": "https://www.bipt.edu.cn/docs/2024-01/601794b8b6ec4bf89b610c4177dd70d3.pdf",
+      "hostname": "www.bipt.edu.cn",
+      "source_role": "outcomes_entry",
+      "region_keys": [
+        "cn_region_01"
+      ],
+      "dataset_types": [
+        "outcomes"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://www.bipt.edu.cn/xxgkai/de2442e6881f45c18a8a660a36f4fce9.htm",
+      "identity_basis_locator": "报告发布页iframe原PDF链接",
+      "observed_period_label": "2023届（发布页指向，PDF未读）",
+      "time_basis": "graduation_cohort",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "本轮PDF打开超时，正文未取得。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "原报告与发布年分开；不能从文件名猜统计期/就业率，不拿搜索摘要补就业数字。"
+    },
+    {
+      "id": "zj_cutoffs_2026_candidate",
+      "publisher": "浙江省教育考试院",
+      "title": "2026年浙江普通高校招生各类别分数线入口",
+      "url": "https://www.zjzs.net/art/2026/6/25/art_155_12467.html",
+      "hostname": "www.zjzs.net",
+      "source_role": "authority_entry",
+      "region_keys": [
+        "cn_region_11"
+      ],
+      "dataset_types": [
+        "province_cutoff"
+      ],
+      "pathways": [
+        "ordinary_gaokao"
+      ],
+      "identity_basis_url": "https://www.zjzs.net/art/2026/6/25/art_155_12467.html",
+      "identity_basis_locator": "P02原官方页面/标题，当前复取失败",
+      "observed_period_label": "2026年（P02原记录，当前未复核）",
+      "time_basis": "exam_year",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "本轮正文打开超时；P02历史读取不冒充本轮读取。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "只登记来源，不重采分数；一段线不当统一本科线，P02真实观察不导入M0。"
+    },
+    {
+      "id": "moe_program_catalog_2026_candidate",
+      "publisher": "教育部",
+      "title": "2026年普通高等学校本科专业目录入口",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s3882/202604/t20260427_1434931.html",
+      "hostname": "www.moe.gov.cn",
+      "source_role": "navigation",
+      "region_keys": [
+        "cn_region_01",
+        "cn_region_02",
+        "cn_region_03",
+        "cn_region_04",
+        "cn_region_05",
+        "cn_region_06",
+        "cn_region_07",
+        "cn_region_08",
+        "cn_region_09",
+        "cn_region_10",
+        "cn_region_11",
+        "cn_region_12",
+        "cn_region_13",
+        "cn_region_14",
+        "cn_region_15",
+        "cn_region_16",
+        "cn_region_17",
+        "cn_region_18",
+        "cn_region_19",
+        "cn_region_20",
+        "cn_region_21",
+        "cn_region_22",
+        "cn_region_23",
+        "cn_region_24",
+        "cn_region_25",
+        "cn_region_26",
+        "cn_region_27",
+        "cn_region_28",
+        "cn_region_29",
+        "cn_region_30",
+        "cn_region_31"
+      ],
+      "dataset_types": [
+        "curriculum"
+      ],
+      "pathways": [
+        "institution_reference"
+      ],
+      "identity_basis_url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s3882/202604/t20260427_1434931.html",
+      "identity_basis_locator": "P02发现的专业目录链接；当前返回重定向循环",
+      "observed_period_label": "2026年（来源发现标签，正文未核验）",
+      "time_basis": "publication_year",
+      "source_year": null,
+      "year_mapping_status": "unverified",
+      "year_basis_url": null,
+      "access_status": "source_unavailable",
+      "checked_on": "2026-10-01",
+      "failure_reason": "本轮正文打开redirect loop，附件未读。",
+      "review_status": "review_required",
+      "publication_status": "not_released",
+      "rights_status": "not_reviewed",
+      "review_owner": null,
+      "automated_fetch_enabled": false,
+      "affects_eligibility": false,
+      "snapshot_status": "not_captured",
+      "snapshot_sha256": null,
+      "is_synthetic": false,
+      "notes": "专业目录导航不是学校培养方案；不计入各校培养来源单元，不导入专业代码。"
+    }
+  ],
+  "regions": [
+    {
+      "region_key": "cn_region_01",
+      "region_name": "北京",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_01"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_02",
+      "region_name": "天津",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_02"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_03",
+      "region_name": "河北",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_03"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_04",
+      "region_name": "山西",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_04"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_05",
+      "region_name": "内蒙古",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_05"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_06",
+      "region_name": "辽宁",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_06"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_07",
+      "region_name": "吉林",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_07"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_08",
+      "region_name": "黑龙江",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_08"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_09",
+      "region_name": "上海",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_09"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_10",
+      "region_name": "江苏",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_10"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_11",
+      "region_name": "浙江",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_11"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_12",
+      "region_name": "安徽",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_12"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_13",
+      "region_name": "福建",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_13"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_14",
+      "region_name": "江西",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_14"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_15",
+      "region_name": "山东",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_15"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_16",
+      "region_name": "河南",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_16"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_17",
+      "region_name": "湖北",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_17"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_18",
+      "region_name": "湖南",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_18"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_19",
+      "region_name": "广东",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_19"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_20",
+      "region_name": "广西",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_20"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_21",
+      "region_name": "海南",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_21"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_22",
+      "region_name": "重庆",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_22"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_23",
+      "region_name": "四川",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_23"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_24",
+      "region_name": "贵州",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_24"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_25",
+      "region_name": "云南",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_25"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_26",
+      "region_name": "西藏",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_26"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_27",
+      "region_name": "陕西",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_27"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_28",
+      "region_name": "甘肃",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_28"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_29",
+      "region_name": "青海",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_29"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_30",
+      "region_name": "宁夏",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_30"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "cn_region_31",
+      "region_name": "新疆",
+      "region_kind": "mainland_province",
+      "ordinary_gaokao_applicability": "applicable",
+      "pathways": [
+        "ordinary_gaokao",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "authority_cn_region_31"
+      ],
+      "institution_directory_source_ids": [
+        "moe_institutions_2026"
+      ]
+    },
+    {
+      "region_key": "hk",
+      "region_name": "香港",
+      "region_kind": "hong_kong",
+      "ordinary_gaokao_applicability": "not_applicable",
+      "pathways": [
+        "hk_local_admissions",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "hk_admissions_navigation",
+        "hk_non_jupas_navigation"
+      ],
+      "institution_directory_source_ids": [
+        "hk_institution_directory"
+      ]
+    },
+    {
+      "region_key": "mo",
+      "region_name": "澳门",
+      "region_kind": "macau",
+      "ordinary_gaokao_applicability": "not_applicable",
+      "pathways": [
+        "mo_local_admissions",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "mo_mainland_recommended_2026",
+        "mo_mainland_pathway_guide_2026"
+      ],
+      "institution_directory_source_ids": [
+        "mo_institution_directory"
+      ]
+    },
+    {
+      "region_key": "tw",
+      "region_name": "台湾",
+      "region_kind": "taiwan",
+      "ordinary_gaokao_applicability": "not_applicable",
+      "pathways": [
+        "tw_local_admissions",
+        "institution_reference"
+      ],
+      "authority_source_ids": [
+        "tw_admissions_math_navigation",
+        "tw_uac_navigation"
+      ],
+      "institution_directory_source_ids": [
+        "tw_institution_directory"
+      ]
+    }
+  ],
+  "coverage_units": [
+    {
+      "region_key": "cn_region_01",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_01",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_01"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_01",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_01"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_01",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_01"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_01",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_01"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_01",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_01",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "bipt_outcomes_2023_metadata",
+        "bipt_outcomes_2023_pdf"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_02",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_02",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_02"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_02",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_02"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_02",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_02"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_02",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_02"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_02",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_02",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_03",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_03",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_03"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_03",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_03"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_03",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_03"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_03",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_03"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_03",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_03",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_04",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_04",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_04"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_04",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_04"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_04",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_04"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_04",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_04"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_04",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_04",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_05",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_05",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_05"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_05",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_05"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_05",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_05"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_05",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_05"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_05",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_05",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_06",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_06",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_06"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_06",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_06"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_06",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_06"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_06",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_06"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_06",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_06",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_07",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_07",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_07"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_07",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_07"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_07",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_07"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_07",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_07"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_07",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_07",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_08",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_08",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_08"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_08",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_08"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_08",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_08"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_08",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_08"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_08",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_08",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_09",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_09",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_09"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_09",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_09"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_09",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_09"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_09",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_09"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_09",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_09",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_10",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_10",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_10"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_10",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_10"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_10",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_10"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_10",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_10"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_10",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_10",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_11",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_11",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_11",
+        "zj_cutoffs_2026_candidate"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_11",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_11"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_11",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_11"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_11",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_11"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_11",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_11",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_12",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_12",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_12"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_12",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_12"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_12",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_12"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_12",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_12"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_12",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_12",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_13",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_13",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_13"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_13",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_13"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_13",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_13"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_13",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_13"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_13",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_13",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_14",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_14",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_14"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_14",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_14"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_14",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_14"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_14",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_14"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_14",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_14",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_15",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_15",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_15"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_15",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_15"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_15",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_15"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_15",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_15"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_15",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_15",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_16",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_16",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_16"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_16",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_16"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_16",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_16"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_16",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_16"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_16",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_16",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_17",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_17",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_17"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_17",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_17"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_17",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_17"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_17",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_17"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_17",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_17",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_18",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_18",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_18"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_18",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_18"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_18",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_18"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_18",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_18"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_18",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_18",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_19",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_19",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_19"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_19",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_19"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_19",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_19"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_19",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_19"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_19",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_19",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_20",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_20",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_20"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_20",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_20"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_20",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_20"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_20",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_20"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_20",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_20",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_21",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_21",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_21"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_21",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_21"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_21",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_21"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_21",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_21"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_21",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "hainan_curriculum_2026_candidate"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_21",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_22",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_22",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_22"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_22",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_22"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_22",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_22"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_22",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_22"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_22",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_22",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_23",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_23",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_23"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_23",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_23"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_23",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_23"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_23",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_23"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_23",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_23",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_24",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_24",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_24"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_24",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_24"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_24",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_24"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_24",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_24"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_24",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_24",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_25",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_25",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_25"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_25",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_25"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_25",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_25"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_25",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_25"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_25",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_25",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_26",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_26",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_26"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_26",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_26"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_26",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_26"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_26",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_26"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_26",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_26",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_27",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_27",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_27"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_27",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_27"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_27",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_27"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_27",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_27"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_27",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_27",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_28",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_28",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_28"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_28",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_28"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_28",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_28"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_28",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_28"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_28",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_28",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_29",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_29",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_29"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_29",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_29"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_29",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_29"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_29",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_29"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_29",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_29",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_30",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_30",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_30"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_30",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_30"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_30",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_30"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_30",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_30"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_30",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_30",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_31",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "moe_institutions_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_31",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_31"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_31",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_31"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_31",
+      "dataset_type": "admission_statistics",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_31"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_31",
+      "dataset_type": "admission_policy",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [
+        "authority_cn_region_31"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_31",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "cn_region_31",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "hk",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "hk_institution_directory"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "hk",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [],
+      "missing_reason": "not_applicable",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "hk",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [],
+      "missing_reason": "not_applicable",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "hk",
+      "dataset_type": "admission_statistics",
+      "pathway": "hk_local_admissions",
+      "candidate_source_ids": [
+        "hk_admissions_navigation"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "hk",
+      "dataset_type": "admission_policy",
+      "pathway": "hk_local_admissions",
+      "candidate_source_ids": [
+        "hk_admissions_navigation",
+        "hk_non_jupas_navigation"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "hk",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "hk",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "mo",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "mo_institution_directory"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "mo",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [],
+      "missing_reason": "not_applicable",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "mo",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [],
+      "missing_reason": "not_applicable",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "mo",
+      "dataset_type": "admission_statistics",
+      "pathway": "mo_local_admissions",
+      "candidate_source_ids": [
+        "mo_mainland_pathway_guide_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "mo",
+      "dataset_type": "admission_policy",
+      "pathway": "mo_local_admissions",
+      "candidate_source_ids": [
+        "mo_mainland_recommended_2026",
+        "mo_mainland_pathway_guide_2026"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "mo",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "mo",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "tw",
+      "dataset_type": "institution_directory",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [
+        "tw_institution_directory"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "tw",
+      "dataset_type": "province_cutoff",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [],
+      "missing_reason": "not_applicable",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "tw",
+      "dataset_type": "score_distribution",
+      "pathway": "ordinary_gaokao",
+      "candidate_source_ids": [],
+      "missing_reason": "not_applicable",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "tw",
+      "dataset_type": "admission_statistics",
+      "pathway": "tw_local_admissions",
+      "candidate_source_ids": [
+        "tw_uac_navigation"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "tw",
+      "dataset_type": "admission_policy",
+      "pathway": "tw_local_admissions",
+      "candidate_source_ids": [
+        "tw_admissions_math_navigation",
+        "tw_uac_navigation"
+      ],
+      "missing_reason": "source_candidate_only",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "tw",
+      "dataset_type": "curriculum",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    },
+    {
+      "region_key": "tw",
+      "dataset_type": "outcomes",
+      "pathway": "institution_reference",
+      "candidate_source_ids": [],
+      "missing_reason": "not_collected",
+      "expected_total": null,
+      "coverage_ratio": null
+    }
+  ]
+}

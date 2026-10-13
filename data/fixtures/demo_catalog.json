@@ -1,0 +1,392 @@
+{
+  "is_synthetic": true,
+  "data_as_of": "2026-09-30",
+  "ruleset_version": "DEMO_M0_v1",
+  "institutions": [
+    {
+      "id": "DEMO_CN_INSTITUTE",
+      "name": "DEMO_国内示例学院",
+      "country": "CN",
+      "is_synthetic": true
+    },
+    {
+      "id": "DEMO_GB_INSTITUTE",
+      "name": "DEMO_英国示例学院",
+      "country": "GB",
+      "is_synthetic": true
+    }
+  ],
+  "documents": [
+    {
+      "evidence": {
+        "id": "DEMO_EVIDENCE_CN_MATH",
+        "offering_ids": [
+          "DEMO_CN_MATH"
+        ],
+        "title": "DEMO_CN_MATH_合成依据",
+        "is_synthetic": true,
+        "source_url": "demo://catalog/cn_math",
+        "document_version_id": "DEMO_DOC_CN_MATH_v1",
+        "document_sha256": "e0f86c2260d7748721f2b0608f8927535889f83af35b521462b1688560617c3d",
+        "locator": "section:synthetic_requirements",
+        "excerpt": "2027入学，浙江普通高考、中国内地申请人、本科：选考物理；实得高考总分至少560/750 points，实得数学至少100/150 points。本演示项目未公布申请截止日期。",
+        "entry_year": 2027,
+        "country": "CN",
+        "province": "浙江",
+        "applicant_category": "cn_mainland",
+        "pathway": "gaokao",
+        "review_status": "demo_reviewed",
+        "data_as_of": "2026-09-30"
+      },
+      "raw_document": "DEMO 合成招生测试资料。不是任何真实学校的官方依据。\n2027入学，浙江普通高考、中国内地申请人、本科：选考物理；实得高考总分至少560/750 points，实得数学至少100/150 points。本演示项目未公布申请截止日期。"
+    },
+    {
+      "evidence": {
+        "id": "DEMO_EVIDENCE_GB_DEFERRED_REQUIREMENTS",
+        "offering_ids": [
+          "DEMO_GB_DEFERRED"
+        ],
+        "title": "DEMO_GB_DEFERRED_REQUIREMENTS_合成依据",
+        "is_synthetic": true,
+        "source_url": "demo://catalog/gb_deferred_requirements",
+        "document_version_id": "DEMO_DOC_GB_DEFERRED_REQUIREMENTS_v1",
+        "document_sha256": "99455e034f268a7a56d30ba73f99c5a2dda0af414c77d61e2d8414d4ff09e31c",
+        "locator": "section:synthetic_requirements",
+        "excerpt": "2027英国本科演示项目，中国内地普通高考申请人：实得高考总分至少600/750 points，入学阶段实得英语语言至少6.5/9 band。",
+        "entry_year": 2027,
+        "country": "GB",
+        "province": null,
+        "applicant_category": "cn_mainland",
+        "pathway": "uk_undergraduate",
+        "review_status": "demo_reviewed",
+        "data_as_of": "2026-09-30"
+      },
+      "raw_document": "DEMO 合成招生测试资料。不是任何真实学校的官方依据。\n2027英国本科演示项目，中国内地普通高考申请人：实得高考总分至少600/750 points，入学阶段实得英语语言至少6.5/9 band。"
+    },
+    {
+      "evidence": {
+        "id": "DEMO_EVIDENCE_GB_DEFERRED_POLICY",
+        "offering_ids": [
+          "DEMO_GB_DEFERRED"
+        ],
+        "title": "DEMO_GB_DEFERRED_POLICY_合成依据",
+        "is_synthetic": true,
+        "source_url": "demo://catalog/gb_deferred_policy",
+        "document_version_id": "DEMO_DOC_GB_DEFERRED_POLICY_v1",
+        "document_sha256": "42153cead3c2d4660a15c819a149bb313783800f639e66fb3892614818ef46d7",
+        "locator": "section:synthetic_requirements",
+        "excerpt": "2027本演示课程允许申请时缺少英语语言成绩，入学前必须取得至少6.5/9 band，并于2027-08-20之前后补。此政策仅属合成演示，不是真实学校政策。",
+        "entry_year": 2027,
+        "country": "GB",
+        "province": null,
+        "applicant_category": "cn_mainland",
+        "pathway": "uk_undergraduate",
+        "review_status": "demo_reviewed",
+        "data_as_of": "2026-09-30"
+      },
+      "raw_document": "DEMO 合成招生测试资料。不是任何真实学校的官方依据。\n2027本演示课程允许申请时缺少英语语言成绩，入学前必须取得至少6.5/9 band，并于2027-08-20之前后补。此政策仅属合成演示，不是真实学校政策。"
+    },
+    {
+      "evidence": {
+        "id": "DEMO_EVIDENCE_GB_DEFERRED_DEADLINE",
+        "offering_ids": [
+          "DEMO_GB_DEFERRED"
+        ],
+        "title": "DEMO_GB_DEFERRED_DEADLINE_合成依据",
+        "is_synthetic": true,
+        "source_url": "demo://catalog/gb_deferred_deadline",
+        "document_version_id": "DEMO_DOC_GB_DEFERRED_DEADLINE_v1",
+        "document_sha256": "f5daf9276fcc226aa913e8c3856f7654401ee01a13654b118d629b13e387caa9",
+        "locator": "section:synthetic_requirements",
+        "excerpt": "2027本演示课程语言后补截止日期为2027-08-20；仅提供日期，没有截止时间或时区。",
+        "entry_year": 2027,
+        "country": "GB",
+        "province": null,
+        "applicant_category": "cn_mainland",
+        "pathway": "uk_undergraduate",
+        "review_status": "demo_reviewed",
+        "data_as_of": "2026-09-30"
+      },
+      "raw_document": "DEMO 合成招生测试资料。不是任何真实学校的官方依据。\n2027本演示课程语言后补截止日期为2027-08-20；仅提供日期，没有截止时间或时区。"
+    },
+    {
+      "evidence": {
+        "id": "DEMO_EVIDENCE_GB_APPLICATION_DATE",
+        "offering_ids": [
+          "DEMO_GB_DEFERRED"
+        ],
+        "title": "DEMO_GB_APPLICATION_DATE_合成依据",
+        "is_synthetic": true,
+        "source_url": "demo://catalog/gb_application_date",
+        "document_version_id": "DEMO_DOC_GB_APPLICATION_DATE_v1",
+        "document_sha256": "e9cc01632a28a1eced921d3d584c019711438a8568b3c82931bd57e280092eff",
+        "locator": "section:synthetic_requirements",
+        "excerpt": "2027本演示课程申请截止日期为2027-01-15；仅提供日期，没有截止时间或时区。",
+        "entry_year": 2027,
+        "country": "GB",
+        "province": null,
+        "applicant_category": "cn_mainland",
+        "pathway": "uk_undergraduate",
+        "review_status": "demo_reviewed",
+        "data_as_of": "2026-09-30"
+      },
+      "raw_document": "DEMO 合成招生测试资料。不是任何真实学校的官方依据。\n2027本演示课程申请截止日期为2027-01-15；仅提供日期，没有截止时间或时区。"
+    },
+    {
+      "evidence": {
+        "id": "DEMO_EVIDENCE_GB_NO_DEFERRAL",
+        "offering_ids": [
+          "DEMO_GB_NO_DEFERRAL"
+        ],
+        "title": "DEMO_GB_NO_DEFERRAL_合成依据",
+        "is_synthetic": true,
+        "source_url": "demo://catalog/gb_no_deferral",
+        "document_version_id": "DEMO_DOC_GB_NO_DEFERRAL_v1",
+        "document_sha256": "b336c335d68dc3e13c3bd95d1a66e270540e7a14d2db788f12ec28a04d224f41",
+        "locator": "section:synthetic_requirements",
+        "excerpt": "2027英国本科演示项目，中国内地普通高考申请人：实得高考总分至少580/750 points，实得英语语言至少6.5/9 band；没有已审核的语言后补政策。申请截止日期未公布。",
+        "entry_year": 2027,
+        "country": "GB",
+        "province": null,
+        "applicant_category": "cn_mainland",
+        "pathway": "uk_undergraduate",
+        "review_status": "demo_reviewed",
+        "data_as_of": "2026-09-30"
+      },
+      "raw_document": "DEMO 合成招生测试资料。不是任何真实学校的官方依据。\n2027英国本科演示项目，中国内地普通高考申请人：实得高考总分至少580/750 points，实得英语语言至少6.5/9 band；没有已审核的语言后补政策。申请截止日期未公布。"
+    },
+    {
+      "evidence": {
+        "id": "DEMO_EVIDENCE_GB_MISSING_DEADLINE",
+        "offering_ids": [
+          "DEMO_GB_MISSING_DEADLINE"
+        ],
+        "title": "DEMO_GB_MISSING_DEADLINE_合成依据",
+        "is_synthetic": true,
+        "source_url": "demo://catalog/gb_missing_deadline",
+        "document_version_id": "DEMO_DOC_GB_MISSING_DEADLINE_v1",
+        "document_sha256": "a2337540cccd37fc0eb6b74e8d41482dfd526dd9d90645f5a8401040fbcfbda0",
+        "locator": "section:synthetic_requirements",
+        "excerpt": "2027英国本科演示项目，中国内地普通高考申请人：实得高考总分至少580/750 points，入学阶段实得英语语言至少6.5/9 band。文字提及可后补，但未公布后补期限，因此不能构成可执行后补政策。申请日期也未公布。",
+        "entry_year": 2027,
+        "country": "GB",
+        "province": null,
+        "applicant_category": "cn_mainland",
+        "pathway": "uk_undergraduate",
+        "review_status": "demo_reviewed",
+        "data_as_of": "2026-09-30"
+      },
+      "raw_document": "DEMO 合成招生测试资料。不是任何真实学校的官方依据。\n2027英国本科演示项目，中国内地普通高考申请人：实得高考总分至少580/750 points，入学阶段实得英语语言至少6.5/9 band。文字提及可后补，但未公布后补期限，因此不能构成可执行后补政策。申请日期也未公布。"
+    }
+  ],
+  "offerings": [
+    {
+      "id": "DEMO_CN_MATH",
+      "institution_id": "DEMO_CN_INSTITUTE",
+      "institution_name": "DEMO_国内示例学院",
+      "title": "DEMO_数学与计算本科示例",
+      "is_synthetic": true,
+      "country": "CN",
+      "study_level": "bachelor",
+      "entry_year": 2027,
+      "province": "浙江",
+      "applicant_category": "cn_mainland",
+      "course_system": "gaokao",
+      "pathway": "gaokao",
+      "deadline": null,
+      "deadline_evidence_id": null,
+      "deadline_status": "not_published",
+      "rules": [
+        {
+          "id": "DEMO_CN_MATH_TOTAL",
+          "offering_id": "DEMO_CN_MATH",
+          "field": "assessments.gaokao_total",
+          "op": "gte",
+          "value": 560,
+          "unit": "points",
+          "scale": 750,
+          "stage": "application",
+          "evidence_id": "DEMO_EVIDENCE_CN_MATH",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        },
+        {
+          "id": "DEMO_CN_MATH_MATH",
+          "offering_id": "DEMO_CN_MATH",
+          "field": "assessments.math",
+          "op": "gte",
+          "value": 100,
+          "unit": "points",
+          "scale": 150,
+          "stage": "application",
+          "evidence_id": "DEMO_EVIDENCE_CN_MATH",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        },
+        {
+          "id": "DEMO_CN_MATH_SUBJECT",
+          "offering_id": "DEMO_CN_MATH",
+          "field": "subjects",
+          "op": "in",
+          "value": [
+            "physics"
+          ],
+          "unit": null,
+          "scale": null,
+          "stage": "application",
+          "evidence_id": "DEMO_EVIDENCE_CN_MATH",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        }
+      ]
+    },
+    {
+      "id": "DEMO_GB_DEFERRED",
+      "institution_id": "DEMO_GB_INSTITUTE",
+      "institution_name": "DEMO_英国示例学院",
+      "title": "DEMO_英语可后补本科示例",
+      "is_synthetic": true,
+      "country": "GB",
+      "study_level": "bachelor",
+      "entry_year": 2027,
+      "province": null,
+      "applicant_category": "cn_mainland",
+      "course_system": "gaokao",
+      "pathway": "uk_undergraduate",
+      "deadline": "2027-01-15",
+      "deadline_evidence_id": "DEMO_EVIDENCE_GB_APPLICATION_DATE",
+      "deadline_status": "known",
+      "rules": [
+        {
+          "id": "DEMO_GB_DEFERRED_TOTAL",
+          "offering_id": "DEMO_GB_DEFERRED",
+          "field": "assessments.gaokao_total",
+          "op": "gte",
+          "value": 600,
+          "unit": "points",
+          "scale": 750,
+          "stage": "application",
+          "evidence_id": "DEMO_EVIDENCE_GB_DEFERRED_REQUIREMENTS",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        },
+        {
+          "id": "DEMO_GB_DEFERRED_LANGUAGE",
+          "offering_id": "DEMO_GB_DEFERRED",
+          "field": "assessments.english_language",
+          "op": "gte",
+          "value": 6.5,
+          "unit": "band",
+          "scale": 9,
+          "stage": "enrollment",
+          "evidence_id": "DEMO_EVIDENCE_GB_DEFERRED_REQUIREMENTS",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": {
+            "evidence_id": "DEMO_EVIDENCE_GB_DEFERRED_POLICY",
+            "deadline": "2027-08-20",
+            "deadline_evidence_id": "DEMO_EVIDENCE_GB_DEFERRED_DEADLINE"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DEMO_GB_NO_DEFERRAL",
+      "institution_id": "DEMO_GB_INSTITUTE",
+      "institution_name": "DEMO_英国示例学院",
+      "title": "DEMO_无语言后补政策本科示例",
+      "is_synthetic": true,
+      "country": "GB",
+      "study_level": "bachelor",
+      "entry_year": 2027,
+      "province": null,
+      "applicant_category": "cn_mainland",
+      "course_system": "gaokao",
+      "pathway": "uk_undergraduate",
+      "deadline": null,
+      "deadline_evidence_id": null,
+      "deadline_status": "not_published",
+      "rules": [
+        {
+          "id": "DEMO_GB_NO_DEFERRAL_TOTAL",
+          "offering_id": "DEMO_GB_NO_DEFERRAL",
+          "field": "assessments.gaokao_total",
+          "op": "gte",
+          "value": 580,
+          "unit": "points",
+          "scale": 750,
+          "stage": "application",
+          "evidence_id": "DEMO_EVIDENCE_GB_NO_DEFERRAL",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        },
+        {
+          "id": "DEMO_GB_NO_DEFERRAL_LANGUAGE",
+          "offering_id": "DEMO_GB_NO_DEFERRAL",
+          "field": "assessments.english_language",
+          "op": "gte",
+          "value": 6.5,
+          "unit": "band",
+          "scale": 9,
+          "stage": "application",
+          "evidence_id": "DEMO_EVIDENCE_GB_NO_DEFERRAL",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        }
+      ]
+    },
+    {
+      "id": "DEMO_GB_MISSING_DEADLINE",
+      "institution_id": "DEMO_GB_INSTITUTE",
+      "institution_name": "DEMO_英国示例学院",
+      "title": "DEMO_后补期限未知本科示例",
+      "is_synthetic": true,
+      "country": "GB",
+      "study_level": "bachelor",
+      "entry_year": 2027,
+      "province": null,
+      "applicant_category": "cn_mainland",
+      "course_system": "gaokao",
+      "pathway": "uk_undergraduate",
+      "deadline": null,
+      "deadline_evidence_id": null,
+      "deadline_status": "not_published",
+      "rules": [
+        {
+          "id": "DEMO_GB_MISSING_DEADLINE_TOTAL",
+          "offering_id": "DEMO_GB_MISSING_DEADLINE",
+          "field": "assessments.gaokao_total",
+          "op": "gte",
+          "value": 580,
+          "unit": "points",
+          "scale": 750,
+          "stage": "application",
+          "evidence_id": "DEMO_EVIDENCE_GB_MISSING_DEADLINE",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        },
+        {
+          "id": "DEMO_GB_MISSING_DEADLINE_LANGUAGE",
+          "offering_id": "DEMO_GB_MISSING_DEADLINE",
+          "field": "assessments.english_language",
+          "op": "gte",
+          "value": 6.5,
+          "unit": "band",
+          "scale": 9,
+          "stage": "enrollment",
+          "evidence_id": "DEMO_EVIDENCE_GB_MISSING_DEADLINE",
+          "review_status": "demo_reviewed",
+          "version": "DEMO_M0_v1",
+          "deferral": null
+        }
+      ]
+    }
+  ]
+}

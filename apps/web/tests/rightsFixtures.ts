@@ -1,0 +1,10 @@
+import { vi } from 'vitest'
+import { createHash } from 'node:crypto'
+import type { RightsApi, RightsContext, RightsRequestData, RightsKind, ExportContent } from '../src/features/privacy/rights/client'
+export const id='5b781876-cb69-4428-aaab-dbbfe091a7e3', otherId='38cfb979-b739-442c-b77e-48c872104099'
+export const meta={api_version:'v2',request_id:'a'.repeat(32),data_as_of:null,profile_version_id:null,release_id:null,ruleset_version:null,profile_mode:null,data_mode:'demo',model_mode:'disabled'}
+export function context(overrides:Partial<RightsContext>={}):RightsContext{return {enabled:true,real_rights_ready:false,reason:'OK',deletion_accepted:false,online_cleanup_days:30,responsibility_retention_months:24,backup_retention_days:35,max_export_bytes:10485760,...overrides}}
+export function request(kind:RightsKind='deletion',overrides:Partial<RightsRequestData>={}):RightsRequestData{return {request_id:id,kind,status:'queued',reason:'OK',attempts:0,accepted_at:'2026-10-04T00:00:00Z',online_cleanup_due_at:kind==='deletion'?'2026-11-03T00:00:00Z':null,completed_at:null,artifact_expires_at:null,online_cleanup_complete:false,retained_responsibility_until:'2028-10-04T00:00:00Z',backup_retention_days:35,is_synthetic:true,...overrides}}
+export function completed(kind:RightsKind='deletion'){return request(kind,{status:'completed',completed_at:'2026-10-04T00:01:00Z',attempts:1,online_cleanup_complete:kind==='deletion',artifact_expires_at:kind==='export'?'2030-10-02T00:00:00Z':null})}
+export function artifact():ExportContent{const text='{"is_synthetic":true,"DEMO":"原文 <img src=x> 731.125"}';return {request_id:id,content_type:'application/json',content_json:text,size_bytes:new TextEncoder().encode(text).length,sha256:createHash('sha256').update(text).digest('hex'),expires_at:'2030-10-02T00:00:00Z',is_synthetic:true}}
+export function api(overrides:Partial<RightsApi>={}):RightsApi{return {context:vi.fn(async()=>context()),create:vi.fn(async kind=>request(kind)),get:vi.fn(async kind=>request(kind)),content:vi.fn(async()=>artifact()),...overrides}}

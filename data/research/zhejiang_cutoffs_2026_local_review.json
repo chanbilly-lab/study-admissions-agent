@@ -1,0 +1,16 @@
+{
+  "schema_version": "reference.cutoffs.confirmation.1",
+  "batch_key": "ZJ_2026_ORDINARY_CUTOFFS_V1",
+  "source_sha256": "b9fd87a8a202b37d6ff9e4f1efb8fdef394213448ffe983b9f5e7361e4dfb38a",
+  "manifest_sha256": "58aeddf639d72d911449d92def10e41b4da45f593c8ebacc406b4dc830bf1b1f",
+  "review_ref": "USER_ZJ2026_ORDINARY_3",
+  "recorded_at": "2026-10-12T16:46:37.550727+00:00",
+  "confirmed_record_keys": [
+    "ZJ_2026_ORDINARY_SEGMENT_FIRST",
+    "ZJ_2026_ORDINARY_SEGMENT_SECOND",
+    "ZJ_2026_SPECIAL_CONTROL"
+  ],
+  "human_confirmation": "用户于2026-10-13明确确认494/266/594三条仅供本地参考查询",
+  "local_reference_confirmed": true,
+  "public_publication_authorized": false
+}

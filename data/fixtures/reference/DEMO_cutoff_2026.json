@@ -1,0 +1,15 @@
+{
+  "schema_version": "candidate.1",
+  "records": [{
+    "record_id": "DEMO_CUTOFF_2026",
+    "is_synthetic": true,
+    "original_label": "DEMO_合成本科控制线，不是真实省线",
+    "source_ref": "DEMO_SOURCE_ONLY",
+    "scope": {"region_key": "cn_region_01", "pathway": "ordinary_gaokao", "exam_year": 2026, "subject_category": "DEMO_category", "batch": "DEMO_batch", "round": "DEMO_round"},
+    "line_kind": "undergraduate_control",
+    "value": "500",
+    "original_value": "DEMO_500",
+    "max_score": null,
+    "bonus_definition": null
+  }]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "reference.cutoffs.import.1",
+  "batch_key": "ZJ2026_ORDINARY_CUTOFF_3",
+  "source": {
+    "publisher": "浙江省教育考试院",
+    "url": "https://www.zjzs.net/art/2026/6/25/art_155_12467.html",
+    "title": "2026年浙江省普通高校招生各类别分数线",
+    "published_label": "2026-06-25 13:22",
+    "published_timezone": null,
+    "retrieved_at": "2026-10-12T16:39:53.338904+00:00",
+    "original_sha256": "b9fd87a8a202b37d6ff9e4f1efb8fdef394213448ffe983b9f5e7361e4dfb38a",
+    "body_bytes": 68359,
+    "authority_status": "official_site_checked",
+    "public_reuse_permission": "unknown"
+  },
+  "records": [
+    {
+      "record_key": "ZJ_2026_ORDINARY_SEGMENT_FIRST",
+      "exam_year": 2026,
+      "region_key": "cn_region_11",
+      "subject_category": "普通类",
+      "line_kind": "segment_first",
+      "original_label": "第一段",
+      "value": 494,
+      "unit": "points",
+      "is_synthetic": false,
+      "max_score": null,
+      "bonus_definition": null,
+      "max_score_missing_reason": "not_stated_in_source",
+      "bonus_missing_reason": "not_stated_in_source",
+      "excerpt": "普通类 第一段；分数线 494",
+      "locator": "content_start/table[1]/row[2]/column[2]"
+    },
+    {
+      "record_key": "ZJ_2026_ORDINARY_SEGMENT_SECOND",
+      "exam_year": 2026,
+      "region_key": "cn_region_11",
+      "subject_category": "普通类",
+      "line_kind": "segment_second",
+      "original_label": "第二段",
+      "value": 266,
+      "unit": "points",
+      "is_synthetic": false,
+      "max_score": null,
+      "bonus_definition": null,
+      "max_score_missing_reason": "not_stated_in_source",
+      "bonus_missing_reason": "not_stated_in_source",
+      "excerpt": "普通类 第二段；分数线 266",
+      "locator": "content_start/table[1]/row[2]/column[3]"
+    },
+    {
+      "record_key": "ZJ_2026_SPECIAL_CONTROL",
+      "exam_year": 2026,
+      "region_key": "cn_region_11",
+      "subject_category": "普通类",
+      "line_kind": "special_category",
+      "original_label": "特殊类型招生控制线",
+      "value": 594,
+      "unit": "points",
+      "is_synthetic": false,
+      "max_score": null,
+      "bonus_definition": null,
+      "max_score_missing_reason": "not_stated_in_source",
+      "bonus_missing_reason": "not_stated_in_source",
+      "excerpt": "划定特殊类型招生控制线594分，用于强基计划、军校等提前录取或特殊类型招生的招生录取。",
+      "locator": "content_start/ordinary_note[1]"
+    }
+  ]
+}

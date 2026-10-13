@@ -1,0 +1,175 @@
+# Local foundation SOURCE, not a public-service release configuration.
+name: study-generic
+
+x-logging: &bounded-logging
+  driver: json-file
+  options:
+    max-size: "5m"
+    max-file: "3"
+
+x-worker-policy:
+  enabled: false
+  reserved_network: db_private
+  reason: No production private-service/worker assembly or trusted recovery anchor.
+
+services:
+  api:
+    image: ${STUDY_API_IMAGE:?Set a versioned local API image tag}
+    build:
+      context: ..
+      dockerfile: deploy/docker/api.Dockerfile
+      target: foundation
+      args:
+        PYTHON_IMAGE: ${PYTHON_IMAGE:?Set an official Python 3.12 bookworm image with sha256 digest}
+    user: "10001:10001"
+    environment:
+      V2_APP_ENVIRONMENT: production
+      V2_DATA_MODE: verified
+      V2_MODEL_MODE: disabled
+      DEMO_MODE: "false"
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=32m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [api_private]
+    restart: unless-stopped
+    logging: *bounded-logging
+    healthcheck:
+      # Process/foundation health only; never a private-business readiness signal.
+      test: [CMD, python, -c, "import json,urllib.request; d=json.load(urllib.request.urlopen('http://127.0.0.1:8000/v2/config',timeout=3))['data']; assert d['data_mode']=='verified' and d['model_mode']=='disabled' and d['business_available'] is False"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  web:
+    image: ${STUDY_WEB_IMAGE:?Set a versioned local web image tag}
+    build:
+      context: ..
+      dockerfile: deploy/docker/web.Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:?Set an official Node 24 bookworm image with sha256 digest}
+        NGINX_IMAGE: ${NGINX_IMAGE:?Set an official NGINX bookworm image with sha256 digest}
+    user: "10001:10001"
+    environment:
+      STUDY_SITE_HOST: ${STUDY_SITE_HOST:?Set the certificate DNS host}
+    ports:
+      - "127.0.0.1:${STUDY_HTTPS_PORT:-8443}:8443"
+    depends_on:
+      api:
+        condition: service_healthy
+    secrets: [tls_certificate, tls_private_key]
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=64m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [edge, api_private]
+    restart: unless-stopped
+    logging: *bounded-logging
+
+  db:
+    image: ${POSTGRES_IMAGE:?Set an official PostgreSQL 16 bookworm image with sha256 digest}
+    environment:
+      POSTGRES_USER: study_owner
+      POSTGRES_DB: study_business
+      POSTGRES_PASSWORD_FILE: /run/secrets/business_db_password
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256 --auth-local=scram-sha-256"
+    secrets: [business_db_password]
+    volumes: ["business_pgdata:/var/lib/postgresql/data"]
+    networks: [db_private]
+    security_opt: ["no-new-privileges:true"]
+    restart: unless-stopped
+    logging: *bounded-logging
+    healthcheck:
+      test: [CMD, pg_isready, -U, study_owner, -d, study_business]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  ledger_db:
+    image: ${POSTGRES_IMAGE:?Set an official PostgreSQL 16 bookworm image with sha256 digest}
+    environment:
+      POSTGRES_USER: study_ledger_owner
+      POSTGRES_DB: study_ledger
+      POSTGRES_PASSWORD_FILE: /run/secrets/ledger_db_password
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256 --auth-local=scram-sha-256"
+    secrets: [ledger_db_password]
+    volumes: ["ledger_pgdata:/var/lib/postgresql/data"]
+    networks: [ledger_private]
+    security_opt: ["no-new-privileges:true"]
+    restart: unless-stopped
+    logging: *bounded-logging
+    healthcheck:
+      test: [CMD, pg_isready, -U, study_ledger_owner, -d, study_ledger]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  migrate:
+    profiles: [tools]
+    image: ${STUDY_TOOLS_IMAGE:?Set a versioned local maintenance image tag}
+    build:
+      context: ..
+      dockerfile: deploy/docker/api.Dockerfile
+      target: maintenance
+      args:
+        PYTHON_IMAGE: ${PYTHON_IMAGE:?Set the fixed Python image with sha256 digest}
+    user: "10001:10001"
+    command: ["--help"]
+    secrets: [business_migration_url]
+    depends_on:
+      db:
+        condition: service_healthy
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=32m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [db_private]
+    restart: "no"
+    logging: *bounded-logging
+
+  ledger_migrate:
+    profiles: [tools]
+    image: ${STUDY_TOOLS_IMAGE:?Set the same versioned maintenance image tag}
+    user: "10001:10001"
+    command: ["--help"]
+    secrets: [ledger_migration_url]
+    depends_on:
+      ledger_db:
+        condition: service_healthy
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=32m,mode=1777"]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [ledger_private]
+    restart: "no"
+    logging: *bounded-logging
+
+networks:
+  edge: {}
+  api_private:
+    internal: true
+  db_private:
+    internal: true
+  ledger_private:
+    internal: true
+
+volumes:
+  business_pgdata: {}
+  ledger_pgdata: {}
+
+secrets:
+  tls_certificate:
+    file: ${STUDY_TLS_CERT_FILE:?Set an external certificate file path}
+  tls_private_key:
+    file: ${STUDY_TLS_KEY_FILE:?Set an external private-key file path}
+  business_db_password:
+    file: ${STUDY_DB_PASSWORD_FILE:?Set an external business database password file}
+  ledger_db_password:
+    file: ${STUDY_LEDGER_PASSWORD_FILE:?Set an external ledger password file}
+  business_migration_url:
+    file: ${STUDY_BUSINESS_URL_FILE:?Set an external business migration URL file}
+  ledger_migration_url:
+    file: ${STUDY_LEDGER_URL_FILE:?Set an external ledger migration URL file}

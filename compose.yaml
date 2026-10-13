@@ -1,0 +1,19 @@
+name: admissions-m0
+services:
+  db:
+    image: postgres:16.6-alpine
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo_local_only
+      POSTGRES_DB: admissions_demo
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - demo_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U demo -d admissions_demo"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  demo_pgdata:

@@ -1,0 +1,15 @@
+{
+  "batch_id": "DEMO_BATCH_cn_region_01_2026_cutoff",
+  "is_synthetic": true,
+  "scope": {"region_key": "cn_region_01", "pathway": "ordinary_gaokao"},
+  "reference_year": 2026,
+  "dataset_type": "province_cutoff",
+  "candidate_count": 1,
+  "expected_total": null,
+  "source_refs": ["DEMO_SOURCE_ONLY"],
+  "source_sha256": [null],
+  "permission_status": "pending",
+  "reviewer_ref": null,
+  "original_review_ref": null,
+  "quality_report_ref": null
+}

@@ -1,0 +1,17 @@
+import { describe,it,expect } from 'vitest'
+import { fromExecution,workspaceInput,localTime } from '../src/features/plans/form'
+import { utcMicros,wire,validExecution } from '../src/features/plans/validation'
+import { plan,proposal,workspaceRequest,rehash } from './plansFixtures'
+function local(){const p=proposal(),value=fromExecution(p);value.availabilityConfirmed=true;value.restExcluded=true;return{p,value}}
+describe('T33 exact plan input',()=>{
+ it('rejects an omitted internal goal despite a recomputed ready snapshot hash',async()=>{const e=proposal();e.proposal.schedule_configuration!.internal_goals=[{task_key:e.proposal.effective_draft.tasks[0]!.task_key,due_at:'2026-10-05T03:00:00.123456Z'}];rehash(e);expect(await validExecution(e)).toBe(false)})
+ it('retains six fractional UTC digits and distinguishes empty/null from zero',()=>{const{p,value}=local();value.weeklyHours='0';value.estimates[p.proposal.effective_draft.tasks[0]!.task_key]='';const input=workspaceInput(value,p);expect(input.schedule!.weekly_hours).toBe('0');expect(input.estimate_overrides[0]!.estimated_hours).toBeNull();expect(input.schedule!.slots[0]!.start_at).toBe('2026-10-05T00:00:00.123456Z');value.weeklyHours='';value.estimates[p.proposal.effective_draft.tasks[0]!.task_key]='0';expect(workspaceInput(value,p).schedule!.weekly_hours).toBeNull();expect(workspaceInput(value,p).estimate_overrides[0]!.estimated_hours).toBe('0')})
+ it.each([' 2','2e1','NaN','0.0000001','1001','-1'])('rejects malformed or unbounded estimate %s',invalid=>{const{p,value}=local();value.estimates[p.proposal.effective_draft.tasks[0]!.task_key]=invalid;expect(()=>workspaceInput(value,p)).toThrow()})
+ it('requires independent availability and rest confirmation',()=>{const{p,value}=local();value.restExcluded=false;expect(()=>workspaceInput(value,p)).toThrow('休息');value.restExcluded=true;value.availabilityConfirmed=false;expect(()=>workspaceInput(value,p)).toThrow('确认')})
+ it('rejects naive/local offsets and preserves microsecond comparisons',()=>{expect(utcMicros('2026-10-05T00:00:00.123457Z')-utcMicros('2026-10-05T00:00:00.123456+00:00')).toBe(1n);expect(()=>utcMicros('2026-10-05T08:00:00+08:00')).toThrow();expect(localTime('2026-10-05T00:00:00.123456Z','Asia/Shanghai')).toContain('显示预览')})
+ it('rejects overlapping availability rather than compressing it',()=>{const{p,value}=local();value.slots.push({...value.slots[0]!,id:'00000000-0000-4000-8000-000000000999'});expect(()=>workspaceInput(value,p)).toThrow('重叠')})
+ it('rejects more than eight hours per slot and horizon beyond source TTL',()=>{const{p,value}=local();value.slots[0]!.end='2026-10-05T08:00:00.123457Z';expect(()=>workspaceInput(value,p)).toThrow('八小时');value.slots=[];value.horizonEnd='2029-01-01T00:00:00Z';expect(()=>workspaceInput(value,p)).toThrow('84')})
+ it('can save estimates without constructing a schedule',()=>{const p=plan(),value=fromExecution(p);expect(workspaceInput(value,p).schedule).toBeNull();expect(value.weeklyHours).toBe('');expect(value.slots).toEqual([])})
+ it('keeps strict boolean and native JSON DTO types',()=>{const input=workspaceRequest();expect(wire('HttpWorkspaceInput',input)).toBe(true);input.schedule!.availability_confirmed=1 as never;expect(wire('HttpWorkspaceInput',input)).toBe(false)})
+ it('validates actual ready fixtures before testing them',async()=>{expect(await validExecution(plan())).toBe(true);expect(await validExecution(proposal())).toBe(true)})
+})

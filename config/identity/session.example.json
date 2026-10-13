@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "provider": {
+    "provider_mode": "oidc_boundary",
+    "provider_id": "keycloak_session_example",
+    "issuer": "https://keycloak.example.invalid/realms/REPLACE_ME_REALM",
+    "client_id": "REPLACE_ME_BFF_CLIENT",
+    "callback_allowlist": ["https://app.example.invalid/api/v2/auth/callback"],
+    "scopes": ["openid"],
+    "pkce_method": "S256",
+    "client_auth_method": "client_secret_basic",
+    "allowed_signing_algorithms": ["RS256"]
+  },
+  "redirect_uri": "https://app.example.invalid/api/v2/auth/callback",
+  "login_ttl_seconds": 300,
+  "session_ttl_seconds": 3600,
+  "transport_timeout_seconds": 10.0,
+  "max_response_bytes": 262144
+}

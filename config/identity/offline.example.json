@@ -1,0 +1,12 @@
+{
+  "provider_mode": "offline",
+  "provider_id": "offline_t04",
+  "issuer": "https://offline-idp.example.invalid/realms/t04",
+  "client_id": "SYNTHETIC_T04_CLIENT",
+  "callback_allowlist": ["http://127.0.0.1:8001/v2/auth/callback"],
+  "scopes": ["openid"],
+  "pkce_method": "S256",
+  "client_auth_method": "client_secret_basic",
+  "allowed_signing_algorithms": ["RS256"],
+  "client_secret": null
+}

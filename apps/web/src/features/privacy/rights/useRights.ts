@@ -1,0 +1,28 @@
+import { reactive } from 'vue'
+import type { SessionData } from '../../auth/client'
+import { createRightsApi, RightsError, uuid, isRequest, isContext, isContent, type RightsApi, type RightsContext, type RightsKind, type RightsRequestData, type ExportContent } from './client'
+
+export function useRights(api: RightsApi=createRightsApi(), expired:()=>void=()=>{}, stopped:()=>void=()=>{}) {
+  const state=reactive<{context:RightsContext|null; export:RightsRequestData|null; deletion:RightsRequestData|null; artifact:ExportContent|null;
+    action:string|null; message:string; exportConfirmed:boolean; deletionConfirmed:boolean; lookupId:string; lookupKind:RightsKind}>({
+    context:null,export:null,deletion:null,artifact:null,action:null,message:'',exportConfirmed:false,deletionConfirmed:false,lookupId:'',lookupKind:'deletion'})
+  let actor:SessionData|null=null, generation=0, pending:AbortController|undefined, disposed=false
+  let sessionTimer:ReturnType<typeof setTimeout>|undefined, artifactTimer:ReturnType<typeof setTimeout>|undefined
+  function clearArtifact(){if(artifactTimer!==undefined)clearTimeout(artifactTimer);artifactTimer=undefined;state.artifact=null}
+  function clear() { clearArtifact();state.context=null;state.export=null;state.deletion=null;state.exportConfirmed=false;state.deletionConfirmed=false;state.lookupId='';state.message='';state.action=null }
+  function expireSession(){if(sessionTimer!==undefined)clearTimeout(sessionTimer);sessionTimer=undefined;++generation;pending?.abort();clear();actor=null;expired()}
+  function scheduleSession(){if(sessionTimer!==undefined)clearTimeout(sessionTimer);sessionTimer=undefined;if(disposed||!actor)return;const delay=Date.parse(actor.expires_at)-Date.now();if(!Number.isFinite(delay)||delay<=0){expireSession();return}sessionTimer=setTimeout(scheduleSession,Math.min(delay,2147483647))}
+  function scheduleArtifact(){if(artifactTimer!==undefined)clearTimeout(artifactTimer);artifactTimer=undefined;if(!state.artifact||disposed)return;const delay=Date.parse(state.artifact.expires_at)-Date.now();if(!Number.isFinite(delay)||delay<=0){clearArtifact();return}artifactTimer=setTimeout(scheduleArtifact,Math.min(delay,2147483647))}
+  function begin(action:string) { pending?.abort();pending=new AbortController();state.action=action;state.message='';clearArtifact();state.exportConfirmed=false;state.deletionConfirmed=false;return {epoch:++generation,signal:pending.signal} }
+  function current(epoch:number) { if(disposed||epoch!==generation) return false; if(actor && Date.parse(actor.expires_at)<=Date.now()){expireSession();return false} return true }
+  function fail(error:unknown) { state.artifact=null;state.message=error instanceof RightsError?error.message:'本次操作无法确认，请重新读取本人状态。';if(error instanceof RightsError && [401,403,422,503].includes(error.status)){state.context=null;state.export=null;state.deletion=null;if(error.status===401){clear();state.message=error.message;actor=null;expired()}} }
+  function accept(value:RightsRequestData) { state[value.kind]=value; if(value.kind==='deletion'){state.context=state.context?{...state.context,deletion_accepted:true}:null;state.export=null;stopped()} }
+  async function refresh() { const {epoch,signal}=begin('context');state.context=null;try{const value=await api.context(signal);if(!isContext(value))throw new RightsError(422);if(current(epoch)){state.context=value;if(value.deletion_accepted){state.export=null;stopped()}}}catch(e){if(current(epoch))fail(e)}finally{if(epoch===generation)state.action=null} }
+  async function setActor(value:SessionData|null){ ++generation;pending?.abort();clear();actor=value?{...value}:null;disposed=false;scheduleSession();await refresh() }
+  function canCreate(kind:RightsKind) { return !!actor && Date.parse(actor.expires_at)>Date.now() && !state.action && state.context?.enabled===true && state.context.deletion_accepted!==true && (kind==='export'?state.exportConfirmed:state.deletionConfirmed) }
+  async function create(kind:RightsKind) { if(!canCreate(kind))return;const {epoch,signal}=begin('create');try{const value=await api.create(kind,signal);if(!isRequest(value)||value.kind!==kind)throw new RightsError(422);if(current(epoch)){accept(value);state.lookupId=value.request_id;state.lookupKind=kind;state.message=kind==='deletion'?'删除请求已受理，在线清理尚待执行。':'导出请求已受理，请明确读取处理进度。'}}catch(e){if(current(epoch))fail(e)}finally{if(epoch===generation)state.action=null} }
+  async function track(kind=state.lookupKind,id=state.lookupId) { if(!actor||state.action||!uuid(id))return;const {epoch,signal}=begin('track');try{const value=await api.get(kind,id,signal);if(!isRequest(value)||value.kind!==kind||value.request_id!==id)throw new RightsError(422);if(current(epoch))accept(value)}catch(e){if(current(epoch))fail(e)}finally{if(epoch===generation)state.action=null} }
+  async function content() { const row=state.export;if(!actor||state.action||row?.status!=='completed'||!row.artifact_expires_at||Date.parse(row.artifact_expires_at)<=Date.now()||state.context?.deletion_accepted)return;const {epoch,signal}=begin('content');try{const value=await api.content(row.request_id,signal);if(!await isContent(value)||value.request_id!==row.request_id)throw new RightsError(422);if(current(epoch)&&Date.parse(value.expires_at)>Date.now()){state.artifact=value;scheduleArtifact()}}catch(e){if(current(epoch))fail(e)}finally{if(epoch===generation)state.action=null} }
+  function dispose(){disposed=true;if(sessionTimer!==undefined)clearTimeout(sessionTimer);sessionTimer=undefined;++generation;pending?.abort();pending=undefined;actor=null;clear()}
+  return {state,setActor,refresh,canCreate,create,track,content,dispose}
+}

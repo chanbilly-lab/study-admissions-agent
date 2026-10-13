@@ -1,0 +1,8 @@
+{
+  "supported_province": "浙江",
+  "entry_year": 2027,
+  "data_as_of": "2026-09-30",
+  "ruleset_version": "DEMO_M0_v1",
+  "is_synthetic": true,
+  "note": "仅供合成演示，默认省份是工程配置，不代表该省政策或用户所在地。"
+}

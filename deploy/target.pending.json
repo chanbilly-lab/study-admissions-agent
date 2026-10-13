@@ -1,0 +1,13 @@
+{
+  "schema_version": "t42.generic.1",
+  "scope": "local_foundation_only",
+  "deployment_country_target": "CN",
+  "actual_city": null,
+  "actual_provider": null,
+  "actual_cloud_region": null,
+  "regulatory_process_status": "pending",
+  "public_deployment_authorized": false,
+  "private_business_enabled": false,
+  "worker_enabled": false,
+  "runtime_verified": false
+}

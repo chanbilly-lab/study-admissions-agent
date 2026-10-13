@@ -1,0 +1,50 @@
+worker_processes auto;
+pid /tmp/study-nginx.pid;
+error_log /dev/stderr warn;
+events { worker_connections 512; }
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    access_log off;
+    server_tokens off;
+    client_body_temp_path /tmp/study-client;
+    proxy_temp_path /tmp/study-proxy;
+    client_max_body_size 12m;
+    server {
+        listen 8443 ssl;
+        server_name @SITE_HOST@;
+        if ($host != @SITE_HOST@) { return 444; }
+        ssl_certificate /run/secrets/tls_certificate;
+        ssl_certificate_key /run/secrets/tls_private_key;
+        ssl_protocols TLSv1.2 TLSv1.3;
+        root /usr/share/nginx/html;
+        add_header X-Content-Type-Options "nosniff" always;
+        add_header Referrer-Policy "no-referrer" always;
+        location = /healthz {
+            default_type application/json;
+            add_header Cache-Control "no-store" always;
+            return 200 '{"process":"web","business_available":false,"release_ready":false}';
+        }
+        location = /api { return 404; }
+        location = /public { return 404; }
+        location = /qa { return 404; }
+        location /api/ {
+            include /opt/study/proxy.conf;
+            proxy_pass http://api:8000/;
+        }
+        location /public/ {
+            include /opt/study/proxy.conf;
+            proxy_pass http://api:8000/;
+        }
+        location /qa/ {
+            include /opt/study/proxy.conf;
+            proxy_pass http://api:8000/;
+        }
+        location / {
+            add_header Cache-Control "no-store" always;
+            add_header X-Content-Type-Options "nosniff" always;
+            add_header Referrer-Policy "no-referrer" always;
+            try_files $uri $uri/ /index.html;
+        }
+    }
+}

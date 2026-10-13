@@ -1,0 +1,10 @@
+{
+  "original_research_manifest_sha256": "58aeddf639d72d911449d92def10e41b4da45f593c8ebacc406b4dc830bf1b1f",
+  "execution_manifest_sha256": "f8171cdb6fcb680478e6b1948989fb5f23aa65c477331dc3fee355a903fbc6d0",
+  "batch_id": "10f2c5b3-d829-54fa-a89c-cdc4a8f7a493",
+  "original_source_sha256": "b9fd87a8a202b37d6ff9e4f1efb8fdef394213448ffe983b9f5e7361e4dfb38a",
+  "review_ref": "USER_ZJ2026_ORDINARY_3",
+  "transformation": "Protocol adapter preserves 3 values and source bytes; labels use exact first-table column headers; canonical UTC normalization is explicit.",
+  "local_reference_confirmed": true,
+  "public_publication_authorized": false
+}

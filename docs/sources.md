@@ -1,0 +1,33 @@
+# T13 来源登记与许可契约
+
+T14增量说明（2026-10-03）：共享Authorizer当前POLICY_VERSION=T14_owner_v3，以下T13_owner_v2为本模块当时冻结版本。来源治理/历史许可口径保持；存储读取使用最新exact来源许可与责任，旧asset不能套新版本许可复活，详见[storage](storage.md)。
+
+2026-10-03，实施前冻结。T07/T10/T11已完成，D03正式责任人仍待答；代码验收只用合成负责人/DEMO来源，未配置责任的真实功能关闭，不登记真实来源、不读研究文件或抓取网页。
+
+## 数据契约
+
+SourceBase独立两表catalog_sources（UUID id/dataset_id、reference_key、is_synthetic、current_version）和catalog_source_versions（UUID id/source_id/dataset_id、正version/synthetic及治理快照），catalog链新增0003_catalog_sources_t13。稳定根不编辑，版本只追加；复合FK含dataset/source/synthetic，版本确切键(dataset_id,source_id,version)，不与旧M0 source混用。CatalogBase五表、DatesBase一表和旧0001/0002冻结。
+
+SourceDefinition：publisher（1–200字）；entry_url（HTTP/HTTPS，最多2048字符）；purpose固定admissions_reference；data_type=entry_requirements/application_dates/regional_cutoffs/admission_observations/curriculum/outcomes/institution_directory；scope_note（1–1000字，不自动解释成资格范围）；authority_claim=unclassified/claimed_official/not_official；manual_import_permission/publication_permission/automated_fetch_permission各为pending/denied/granted；可空license_basis（1–2000字）与permission_record_reference（T11有界ASCII标识）；recheck_days严格1–730；manual_import_enabled严格bool。nullable显式提供，不猜许可/负责人/复查。
+
+任一许可非pending需basis与record_reference完整，全部pending则二者NULL；manual_import_enabled=true只能在manual permission granted时申请。三许可独立，claimed_official不授使用权；自动获取始终auto_fetch_enabled=false，granted只是许可记录也不启动网络。URL只验证语法，拒控制/空白/反斜线/userinfo/fragment/非法scheme与端口，原样存元数据；不DNS/fetch，不声称此校验是SSRF沙箱或许可审查。
+
+SourceCreateInput含id/dataset_id/reference_key/is_synthetic/definition；SourceRevisionInput含source_id/definition。SourceVersionData输出id/dataset_id/source_id/version/is_synthetic及definition字段、responsible_user_id、created_at、可空permission_reviewed_at、recheck_due_at、auto_fetch_enabled=false。负责人与登记/许可声明者由当前服务器data_admin派生，不接受客户端角色/owner，T13仅本人承担，不实现转交。合成publisher/ref/permission_record_reference用DEMO_标记；真实候选拒大小写DEMO变体。
+
+服务为非pending许可记录服务器当前reviewed_at；这是授权管理员的许可声明时间，不是系统自动法律验证。recheck_due_at由created_at+显式days算，最多24个日历月；未来/到期许可不可启用，过期旧版本保留但不变成有效证明。真实数据使用与人员留存/清理仍需正式政策和后续任务验收。
+
+有权限的管理员可读取过期历史元数据；manual_import_enabled是该版本的声明快照，不授使用能力。T15/T19消费时必须重新验证最新版本、当前责任/许可和复查期限。写入成功审计flush后越过新版本期限则回滚，不把历史追溯误作新授权。
+
+## 授权与修改范围
+
+SourcePolicy为严格冻结显式配置：enabled默认false、real_sources_ready默认false、responsible_user_ids默认空tuple。合成测试显式enabled且DEMO dataset/actor；真实路径须real_sources_ready与非空配置负责人且当前非合成管理员在名单，否则503。此配置不是法律审批证明，正式D03/Keycloak与上线门槛未解除。
+
+新增Authorizer.check_capability_in_transaction(session,principal,capability)返回即时Principal：同engine活动事务、当前data_admin及可信issuer/client/signature assurance，封闭新增catalog.source.register/catalog.source.read能力；POLICY_VERSION升级T13_owner_v2失效旧缓存上下文。旧require_capability行为保留，不顺带重构。SourceService.register_source/revise_source/get_source_version支持显式caller session或自有事务，可信SourceStore同事务写，expected_dataset_revision与expected_source_version防覆盖；账户→会话/角色→dataset/source/version锁一致，角色与MFA不能来自旧Principal。
+
+默认及auth三mapper/audit/catalog五/date/source两mapper均检查同engine，避免跨库授权或审计。写/读最小administrator.action审计与业务同Session/TX，审计失败回滚，flush后重验当前身份/角色/MFA/政策；修改后重验新版本复查期限，读取历史快照不判许可有效。审计object_type/id/version均NULL，不把来源伪标import、不记录URL/原文/许可文本；来源版本保存最小服务器责任UUID。caller-owned失败由外层回滚后负责审计，不能持锁再开连接。
+
+仅新增admin/sources模块/0003/Unit与PG专项；必要修改authorizer增量、catalog当前head/env、DateStore历史002 ready及T12迁移目标。HTTP/前端/生成契约/依赖/旧迁移/原始输入/研究不改。首次source版本及后续追加均调用同data_admin守卫，旧权限快照不可自动覆盖发布审核；T15/T19必须重新核当前版本/责任/许可/复查，T18事实审核另行实施。
+
+## 验收
+
+严格协议/字段/namespace与缺basis拒绝；官方声明与三许可矩阵独立；学生/operations/旧role或MFA拒绝、责任/真实默认关闭；确切版本/复合FK/防重、乐观并发/回滚、audit不可用失败、slowflush角色/许可到期重验及错engine零连接；0001/0002→0003升级/隔离恢复保留旧三域。无API密钥/外网调用，相关Unit/Integration/Type Check/Build及原文/wire/文档实际记录，Lint缺入口说明未执行。实测见[T13验收](acceptance/T13_source_register.md)。

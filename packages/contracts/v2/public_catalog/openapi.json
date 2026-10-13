@@ -1,0 +1,2018 @@
+{
+  "components": {
+    "schemas": {
+      "CoverageData": {
+        "additionalProperties": false,
+        "properties": {
+          "coverage_ratio": {
+            "title": "Coverage Ratio",
+            "type": "null"
+          },
+          "expected_total": {
+            "title": "Expected Total",
+            "type": "null"
+          },
+          "returned_count": {
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Returned Count",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "no_published_records",
+              "partial"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "returned_count",
+          "expected_total",
+          "coverage_ratio"
+        ],
+        "title": "CoverageData",
+        "type": "object"
+      },
+      "Envelope_PublicConfigData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PublicConfigData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[PublicConfigData]",
+        "type": "object"
+      },
+      "Envelope_PublicEvidenceData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PublicEvidenceData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[PublicEvidenceData]",
+        "type": "object"
+      },
+      "Envelope_PublicOfferingsData_": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PublicOfferingsData"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[PublicOfferingsData]",
+        "type": "object"
+      },
+      "ErrorBody": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "enum": [
+              "UNAUTHORIZED",
+              "FORBIDDEN",
+              "NOT_FOUND",
+              "METHOD_NOT_ALLOWED",
+              "CONFLICT",
+              "VALIDATION_ERROR",
+              "INVALID_CURSOR",
+              "TOO_MANY_REQUESTS",
+              "SERVICE_UNAVAILABLE",
+              "INTERNAL_ERROR"
+            ],
+            "title": "Code",
+            "type": "string"
+          },
+          "details": {
+            "items": {
+              "$ref": "#/components/schemas/ErrorDetail"
+            },
+            "title": "Details",
+            "type": "array"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Request Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "request_id",
+          "details"
+        ],
+        "title": "ErrorBody",
+        "type": "object"
+      },
+      "ErrorDetail": {
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "field_path": {
+            "title": "Field Path",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        },
+        "required": [
+          "field_path",
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail",
+        "type": "object"
+      },
+      "ErrorEnvelope": {
+        "additionalProperties": false,
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorBody"
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "title": "ErrorEnvelope",
+        "type": "object"
+      },
+      "EvidenceLocator": {
+        "additionalProperties": false,
+        "properties": {
+          "byte_end": {
+            "maximum": 1048576.0,
+            "minimum": 1.0,
+            "title": "Byte End",
+            "type": "integer"
+          },
+          "byte_start": {
+            "exclusiveMaximum": 1048576.0,
+            "minimum": 0.0,
+            "title": "Byte Start",
+            "type": "integer"
+          },
+          "line_end": {
+            "maximum": 1048577.0,
+            "minimum": 1.0,
+            "title": "Line End",
+            "type": "integer"
+          },
+          "line_start": {
+            "maximum": 1048577.0,
+            "minimum": 1.0,
+            "title": "Line Start",
+            "type": "integer"
+          },
+          "location_kind": {
+            "const": "utf8_byte_lines",
+            "title": "Location Kind",
+            "type": "string"
+          },
+          "page": {
+            "title": "Page",
+            "type": "null"
+          },
+          "section": {
+            "title": "Section",
+            "type": "null"
+          }
+        },
+        "required": [
+          "byte_start",
+          "byte_end",
+          "line_start",
+          "line_end",
+          "page",
+          "section",
+          "location_kind"
+        ],
+        "title": "EvidenceLocator",
+        "type": "object"
+      },
+      "EvidenceScope": {
+        "additionalProperties": false,
+        "properties": {
+          "applicant_category": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "application_cycle": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "batch_group": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "campus": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "channel": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "country": {
+            "maxLength": 2,
+            "minLength": 2,
+            "pattern": "^[A-Z]{2}$",
+            "title": "Country",
+            "type": "string"
+          },
+          "course": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "course_system": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "dataset_id": {
+            "format": "uuid",
+            "title": "Dataset Id",
+            "type": "string"
+          },
+          "degree": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "entry_year": {
+            "maximum": 9999.0,
+            "minimum": 1.0,
+            "title": "Entry Year",
+            "type": "integer"
+          },
+          "exam_system": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "institution_id": {
+            "format": "uuid",
+            "title": "Institution Id",
+            "type": "string"
+          },
+          "intake": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "pathway": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "program_id": {
+            "format": "uuid",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "progression_pathway": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "province": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "study_level": {
+            "const": "undergraduate",
+            "title": "Study Level",
+            "type": "string"
+          },
+          "subject_scope": {
+            "$ref": "#/components/schemas/ScopeKey"
+          },
+          "teaching_language": {
+            "$ref": "#/components/schemas/ScopeKey"
+          }
+        },
+        "required": [
+          "dataset_id",
+          "program_id",
+          "institution_id",
+          "country",
+          "study_level",
+          "entry_year",
+          "degree",
+          "course",
+          "campus",
+          "teaching_language",
+          "progression_pathway",
+          "intake",
+          "application_cycle",
+          "channel",
+          "course_system",
+          "pathway",
+          "applicant_category",
+          "province",
+          "exam_system",
+          "subject_scope",
+          "batch_group"
+        ],
+        "title": "EvidenceScope",
+        "type": "object"
+      },
+      "Meta": {
+        "additionalProperties": false,
+        "properties": {
+          "api_version": {
+            "const": "v2",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "data_as_of": {
+            "title": "Data As Of",
+            "type": "null"
+          },
+          "data_mode": {
+            "enum": [
+              "demo",
+              "verified"
+            ],
+            "title": "Data Mode",
+            "type": "string"
+          },
+          "model_mode": {
+            "enum": [
+              "disabled",
+              "mock"
+            ],
+            "title": "Model Mode",
+            "type": "string"
+          },
+          "profile_mode": {
+            "title": "Profile Mode",
+            "type": "null"
+          },
+          "profile_version_id": {
+            "title": "Profile Version Id",
+            "type": "null"
+          },
+          "release_id": {
+            "title": "Release Id",
+            "type": "null"
+          },
+          "request_id": {
+            "pattern": "^[0-9a-f]{32}$",
+            "title": "Request Id",
+            "type": "string"
+          },
+          "ruleset_version": {
+            "title": "Ruleset Version",
+            "type": "null"
+          }
+        },
+        "required": [
+          "api_version",
+          "request_id",
+          "data_as_of",
+          "profile_version_id",
+          "release_id",
+          "ruleset_version",
+          "profile_mode",
+          "data_mode",
+          "model_mode"
+        ],
+        "title": "Meta",
+        "type": "object"
+      },
+      "PageInfo": {
+        "additionalProperties": false,
+        "properties": {
+          "has_more": {
+            "title": "Has More",
+            "type": "boolean"
+          },
+          "limit": {
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "maxLength": 512,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor"
+          }
+        },
+        "required": [
+          "limit",
+          "next_cursor",
+          "has_more"
+        ],
+        "title": "PageInfo",
+        "type": "object"
+      },
+      "PublicConfigData": {
+        "additionalProperties": false,
+        "properties": {
+          "allow_test_fixture_read": {
+            "title": "Allow Test Fixture Read",
+            "type": "boolean"
+          },
+          "api_version": {
+            "const": "v2",
+            "title": "Api Version",
+            "type": "string"
+          },
+          "app_environment": {
+            "enum": [
+              "development",
+              "test",
+              "production"
+            ],
+            "title": "App Environment",
+            "type": "string"
+          },
+          "business_available": {
+            "title": "Business Available",
+            "type": "boolean"
+          },
+          "contract_stage": {
+            "const": "public_catalog",
+            "title": "Contract Stage",
+            "type": "string"
+          },
+          "data_mode": {
+            "enum": [
+              "demo",
+              "verified"
+            ],
+            "title": "Data Mode",
+            "type": "string"
+          },
+          "demo_banner": {
+            "anyOf": [
+              {
+                "const": "DEMO：合成测试资料，不是真实招生依据",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Demo Banner"
+          },
+          "entry_year": {
+            "title": "Entry Year",
+            "type": "null"
+          },
+          "live_available": {
+            "const": false,
+            "title": "Live Available",
+            "type": "boolean"
+          },
+          "model_mode": {
+            "enum": [
+              "disabled",
+              "mock"
+            ],
+            "title": "Model Mode",
+            "type": "string"
+          },
+          "query_role": {
+            "enum": [
+              "demo_only",
+              "published_readonly"
+            ],
+            "title": "Query Role",
+            "type": "string"
+          },
+          "schema_version": {
+            "const": "v2.t20",
+            "title": "Schema Version",
+            "type": "string"
+          },
+          "supported_province": {
+            "title": "Supported Province",
+            "type": "null"
+          },
+          "supported_scope": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 0,
+            "title": "Supported Scope",
+            "type": "array"
+          }
+        },
+        "required": [
+          "api_version",
+          "schema_version",
+          "contract_stage",
+          "app_environment",
+          "query_role",
+          "data_mode",
+          "model_mode",
+          "live_available",
+          "business_available",
+          "allow_test_fixture_read",
+          "demo_banner",
+          "supported_scope",
+          "supported_province",
+          "entry_year"
+        ],
+        "title": "PublicConfigData",
+        "type": "object"
+      },
+      "PublicDateData": {
+        "additionalProperties": false,
+        "properties": {
+          "calculated_utc_instant": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calculated Utc Instant"
+          },
+          "conversion_status": {
+            "enum": [
+              "unique",
+              "date_only",
+              "unknown",
+              "missing_timezone",
+              "ambiguous",
+              "nonexistent",
+              "source_conflict",
+              "out_of_range"
+            ],
+            "title": "Conversion Status",
+            "type": "string"
+          },
+          "event_type": {
+            "enum": [
+              "application_open",
+              "application_deadline",
+              "equal_consideration",
+              "materials_deadline",
+              "language_supplement",
+              "score_supplement",
+              "offer_acceptance",
+              "scholarship_deadline",
+              "enrollment"
+            ],
+            "title": "Event Type",
+            "type": "string"
+          },
+          "local_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Local Date"
+          },
+          "local_time": {
+            "anyOf": [
+              {
+                "format": "time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Local Time"
+          },
+          "original_text": {
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Original Text",
+            "type": "string"
+          },
+          "precision": {
+            "enum": [
+              "date",
+              "minute",
+              "second",
+              "unknown"
+            ],
+            "title": "Precision",
+            "type": "string"
+          },
+          "source_alignment": {
+            "enum": [
+              "pending",
+              "conflict"
+            ],
+            "title": "Source Alignment",
+            "type": "string"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timezone"
+          },
+          "tzdata_version": {
+            "const": "2026.4",
+            "title": "Tzdata Version",
+            "type": "string"
+          },
+          "utc_instant": {
+            "title": "Utc Instant",
+            "type": "null"
+          }
+        },
+        "required": [
+          "event_type",
+          "original_text",
+          "precision",
+          "local_date",
+          "local_time",
+          "timezone",
+          "source_alignment",
+          "conversion_status",
+          "calculated_utc_instant",
+          "utc_instant",
+          "tzdata_version"
+        ],
+        "title": "PublicDateData",
+        "type": "object"
+      },
+      "PublicEvidenceData": {
+        "additionalProperties": false,
+        "properties": {
+          "authority_claim": {
+            "enum": [
+              "unclassified",
+              "claimed_official",
+              "not_official"
+            ],
+            "title": "Authority Claim",
+            "type": "string"
+          },
+          "document_sha256": {
+            "maxLength": 64,
+            "minLength": 64,
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Document Sha256",
+            "type": "string"
+          },
+          "entry_year": {
+            "maximum": 9999.0,
+            "minimum": 1.0,
+            "title": "Entry Year",
+            "type": "integer"
+          },
+          "evidence_id": {
+            "format": "uuid",
+            "title": "Evidence Id",
+            "type": "string"
+          },
+          "is_synthetic": {
+            "title": "Is Synthetic",
+            "type": "boolean"
+          },
+          "language": {
+            "enum": [
+              "zh-Hans",
+              "zh-Hant",
+              "en",
+              "und"
+            ],
+            "title": "Language",
+            "type": "string"
+          },
+          "locator": {
+            "$ref": "#/components/schemas/EvidenceLocator"
+          },
+          "offering_id": {
+            "format": "uuid",
+            "title": "Offering Id",
+            "type": "string"
+          },
+          "offering_version": {
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Offering Version",
+            "type": "integer"
+          },
+          "publisher": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Publisher",
+            "type": "string"
+          },
+          "quote": {
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Quote",
+            "type": "string"
+          },
+          "release_id": {
+            "format": "uuid",
+            "title": "Release Id",
+            "type": "string"
+          },
+          "release_version": {
+            "const": 1,
+            "title": "Release Version",
+            "type": "integer"
+          },
+          "requirements_version": {
+            "maxLength": 64,
+            "minLength": 64,
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Requirements Version",
+            "type": "string"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/EvidenceScope"
+          },
+          "snippet_sha256": {
+            "maxLength": 64,
+            "minLength": 64,
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Snippet Sha256",
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "release_id",
+          "release_version",
+          "requirements_version",
+          "is_synthetic",
+          "offering_id",
+          "offering_version",
+          "entry_year",
+          "language",
+          "quote",
+          "document_sha256",
+          "snippet_sha256",
+          "locator",
+          "scope",
+          "publisher",
+          "authority_claim"
+        ],
+        "title": "PublicEvidenceData",
+        "type": "object"
+      },
+      "PublicFactData": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_kind": {
+            "enum": [
+              "unknown",
+              "minimum_requirement",
+              "typical_offer",
+              "historical_statistic",
+              "information"
+            ],
+            "title": "Claim Kind",
+            "type": "string"
+          },
+          "cohort_year": {
+            "anyOf": [
+              {
+                "maximum": 9999.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cohort Year"
+          },
+          "date_resolution": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PublicDateData"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "evidence_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Evidence Id"
+          },
+          "fact_type": {
+            "enum": [
+              "requirement",
+              "score",
+              "fee",
+              "material",
+              "date",
+              "statistic"
+            ],
+            "title": "Fact Type",
+            "type": "string"
+          },
+          "field_key": {
+            "maxLength": 100,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:+-]*$",
+            "title": "Field Key",
+            "type": "string"
+          },
+          "footnote_state": {
+            "enum": [
+              "present",
+              "none",
+              "unknown"
+            ],
+            "title": "Footnote State",
+            "type": "string"
+          },
+          "footnote_text": {
+            "anyOf": [
+              {
+                "maxLength": 4096,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Footnote Text"
+          },
+          "missing_reason": {
+            "anyOf": [
+              {
+                "enum": [
+                  "not_provided",
+                  "not_applicable",
+                  "not_published",
+                  "unavailable",
+                  "ambiguous"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Missing Reason"
+          },
+          "normalized_value": {
+            "anyOf": [
+              {
+                "maxLength": 4096,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Normalized Value"
+          },
+          "period": {
+            "enum": [
+              "unknown",
+              "not_applicable",
+              "academic_year",
+              "program",
+              "one_time",
+              "survey_period"
+            ],
+            "title": "Period",
+            "type": "string"
+          },
+          "statistic_denominator": {
+            "anyOf": [
+              {
+                "maxLength": 512,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Statistic Denominator"
+          },
+          "statistic_population": {
+            "anyOf": [
+              {
+                "maxLength": 512,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Statistic Population"
+          },
+          "statistics_basis": {
+            "enum": [
+              "unknown",
+              "not_applicable",
+              "admission",
+              "employment",
+              "other"
+            ],
+            "title": "Statistics Basis",
+            "type": "string"
+          },
+          "survey_period": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Survey Period"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "maxLength": 4096,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "unit_code": {
+            "enum": [
+              "unknown",
+              "points",
+              "percent",
+              "fraction",
+              "CNY",
+              "GBP",
+              "item",
+              "people",
+              "text",
+              "ISO_DATE"
+            ],
+            "title": "Unit Code",
+            "type": "string"
+          },
+          "value_kind": {
+            "enum": [
+              "text",
+              "decimal"
+            ],
+            "title": "Value Kind",
+            "type": "string"
+          },
+          "value_text": {
+            "anyOf": [
+              {
+                "maxLength": 4096,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value Text"
+          }
+        },
+        "required": [
+          "fact_type",
+          "field_key",
+          "value_kind",
+          "value_text",
+          "normalized_value",
+          "unit",
+          "missing_reason",
+          "footnote_state",
+          "footnote_text",
+          "claim_kind",
+          "unit_code",
+          "period",
+          "statistics_basis",
+          "statistic_population",
+          "statistic_denominator",
+          "cohort_year",
+          "survey_period",
+          "evidence_id",
+          "date_resolution"
+        ],
+        "title": "PublicFactData",
+        "type": "object"
+      },
+      "PublicOfferingData": {
+        "additionalProperties": false,
+        "properties": {
+          "content_sha256": {
+            "maxLength": 64,
+            "minLength": 64,
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Content Sha256",
+            "type": "string"
+          },
+          "entry_year": {
+            "maximum": 9999.0,
+            "minimum": 1.0,
+            "title": "Entry Year",
+            "type": "integer"
+          },
+          "facts": {
+            "items": {
+              "$ref": "#/components/schemas/PublicFactData"
+            },
+            "maxItems": 50,
+            "minItems": 1,
+            "title": "Facts",
+            "type": "array"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "institution_id": {
+            "format": "uuid",
+            "title": "Institution Id",
+            "type": "string"
+          },
+          "institution_name": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Institution Name",
+            "type": "string"
+          },
+          "is_synthetic": {
+            "title": "Is Synthetic",
+            "type": "boolean"
+          },
+          "program_id": {
+            "format": "uuid",
+            "title": "Program Id",
+            "type": "string"
+          },
+          "program_name": {
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Program Name",
+            "type": "string"
+          },
+          "release_id": {
+            "format": "uuid",
+            "title": "Release Id",
+            "type": "string"
+          },
+          "release_version": {
+            "const": 1,
+            "title": "Release Version",
+            "type": "integer"
+          },
+          "requirements_version": {
+            "maxLength": 64,
+            "minLength": 64,
+            "pattern": "^[0-9a-f]{64}$",
+            "title": "Requirements Version",
+            "type": "string"
+          },
+          "ruleset_version": {
+            "title": "Ruleset Version",
+            "type": "null"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/EvidenceScope"
+          },
+          "version": {
+            "maximum": 2147483647.0,
+            "minimum": 1.0,
+            "title": "Version",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "release_id",
+          "release_version",
+          "requirements_version",
+          "content_sha256",
+          "ruleset_version",
+          "id",
+          "version",
+          "entry_year",
+          "is_synthetic",
+          "institution_id",
+          "institution_name",
+          "program_id",
+          "program_name",
+          "scope",
+          "facts"
+        ],
+        "title": "PublicOfferingData",
+        "type": "object"
+      },
+      "PublicOfferingsData": {
+        "additionalProperties": false,
+        "properties": {
+          "coverage": {
+            "$ref": "#/components/schemas/CoverageData"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/PublicOfferingData"
+            },
+            "maxItems": 100,
+            "title": "Items",
+            "type": "array"
+          },
+          "page": {
+            "$ref": "#/components/schemas/PageInfo"
+          }
+        },
+        "required": [
+          "items",
+          "page",
+          "coverage"
+        ],
+        "title": "PublicOfferingsData",
+        "type": "object"
+      },
+      "ScopeKey": {
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "enum": [
+              "known",
+              "unknown",
+              "not_applicable"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.:+-]*$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "status",
+          "value"
+        ],
+        "title": "ScopeKey",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "匿名只读当前已发布项目及获准公开证据；真实公开默认关闭。",
+    "title": "升学咨询 T20 公共目录",
+    "version": "v2.t20"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/config": {
+      "get": {
+        "operationId": "getV2PublicConfig",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_PublicConfigData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Config"
+      }
+    },
+    "/evidence/{evidence_id}": {
+      "get": {
+        "operationId": "getV2PublicEvidence",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "evidence_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Evidence Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "release_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Release Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_PublicEvidenceData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Evidence"
+      }
+    },
+    "/offerings": {
+      "get": {
+        "operationId": "listV2PublicOfferings",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "entry_year",
+            "required": true,
+            "schema": {
+              "maximum": 9999,
+              "minimum": 1,
+              "title": "Entry Year",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 2,
+                  "minLength": 2,
+                  "pattern": "^[A-Z]{2}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Country"
+            }
+          },
+          {
+            "in": "query",
+            "name": "study_level",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "const": "undergraduate",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Study Level"
+            }
+          },
+          {
+            "in": "query",
+            "name": "province",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 106,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Province"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pathway",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 106,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Pathway"
+            }
+          },
+          {
+            "in": "query",
+            "name": "course_system",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 106,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Course System"
+            }
+          },
+          {
+            "in": "query",
+            "name": "applicant_category",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 106,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Applicant Category"
+            }
+          },
+          {
+            "in": "query",
+            "name": "release_id",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "format": "uuid",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Release Id"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 20,
+              "maximum": 100,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "maxLength": 512,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Cursor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_PublicOfferingsData_"
+                }
+              }
+            },
+            "description": "Successful Response",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "需要有效身份验证",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "无权执行此操作",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "资源不存在或不可访问",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "此资源不支持该请求方法",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求与当前资源状态冲突",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求参数不符合契约",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "请求频率超过限制",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务内部错误",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorEnvelope"
+                }
+              }
+            },
+            "description": "服务暂时不可用",
+            "headers": {
+              "X-Request-ID": {
+                "description": "Server-generated request identifier",
+                "schema": {
+                  "pattern": "^[0-9a-f]{32}$",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "List Offerings"
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "/v2"
+    }
+  ]
+}
