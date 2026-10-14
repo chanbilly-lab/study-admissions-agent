@@ -1,6 +1,6 @@
 # 开发 Task 与执行规则
 
-2026-10-14 PRIVACY-PUBLISH-01：[~] 进行中。用户要求隐私审阅／修复后公开源码；全49分支／78提交／1,685blob及元数据、远端表面已查，4文档8处home脱敏，旧提交私人邮箱仅留私有备份。干净候选待仓库管理选择及实际发布，未公开／改名／强推。见[source_publication](source_publication.md)。验收要求保留原工作／历史，公库不含本轮确认的私有标识与旧元数据，公开可见性／SHA实际核对；应用／数据／事实发布不启用，应用测试未恢复。
+2026-10-14 PRIVACY-PUBLISH-01：已完成（源码隐私审阅／公开）。用户确认保留私有历史并公开同名干净版本；全49分支／78提交／1,685blob及元数据已审，4文档8处home脱敏。原ID1400234431保持PRIVATE并只读归档；新同名PUBLIC ID1418914840仅干净codex/privacy-release，原checkout／镜像origin指向备份，公开副本D:/Projects/study-public用noreply。匿名公开页／metadata200，原备份与原HEAD的Git对象404；旧提交REST接口422明确No commit found。初始远程SHA／tree／单提交／单分支已核对，应用CI0，没有强推／删除原历史。见[source_publication](source_publication.md)。应用／事实／模型／服务发布不启用，应用测试未恢复；T67停止边界保持。
 
 2026-10-14 SEARCH-SELECT-01：已完成（搜索选择源码/文档，运行未验证）。学校/专业身份搜索API与当前正式发布reader、共享级联选择/分页/取消/上下文pin，培养/毕业UI移除手填UUID/ref；资料届与身份来源招生年分开，学院/学科禁用。默认目录None、无真实可选项，不用候选/DEMO；培养/毕业仍空。全部测试/Lint/TypeCheck/Build/import/SQL/HTTP/浏览器/校验/装配/重启未执行（用户要求）。[契约](school_program_search.md)、[27文件/未验证记录](acceptance/SEARCH_SELECT_01.md)已同步；PRIVATE保存核对后停止。
 

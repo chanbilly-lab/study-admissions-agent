@@ -1,6 +1,6 @@
 # 升学咨询智能体
 
-2026-10-14 [PRIVACY-PUBLISH-01源码隐私审阅](docs/source_publication.md)：全部远程分支／历史与提交元数据已读，最新候选文档个人home已脱敏；原历史私人邮箱不带入公开候选。此副本仅本地准备，保留私有历史并建立同名干净公开库的仓库管理方案待确认。应用源码、迁移、锁、契约与数据字节保留；本轮不测试／部署，不开放真实业务。
+2026-10-14 [PRIVACY-PUBLISH-01源码隐私审阅与公开](docs/source_publication.md)已完成：用户确认保留私有历史、公开同名干净版本。当前PUBLIC库为https://github.com/chanbilly-lab/study-admissions-agent（新ID1418914840），默认codex/privacy-release；新工作目录D:/Projects/study-public，公开提交使用GitHub noreply。原ID1400234431及完整历史在PRIVATE只读study-admissions-agent-private-archive，旧D:/Projects/study与原镜像origin已指向备份。个人home已脱敏、旧私人邮箱元数据不带入公库；应用／迁移／锁／契约／数据字节保留。本轮未运行应用测试／CI／部署，不开放真实业务。
 
 2026-10-14完成[学校/专业搜索选择源码](docs/school_program_search.md)：参考页培养/毕业查询可通过显式学校→专业选择取内部标识，移除手填UUID/对象ref。新增正式发布身份搜索接口和取消/分页/上下文保护；默认真实目录未装配，返回空/禁用查询，不用英国研究或DEMO填充。培养/毕业当届资料仍未接入。按用户要求未测试/Build/SQL/HTTP或重启服务；完整27文件与未验证记录见[交付](docs/acceptance/SEARCH_SELECT_01.md)。
 

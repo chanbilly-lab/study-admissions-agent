@@ -1,6 +1,6 @@
 # 项目开发约束
 
-2026-10-14用户新要求PRIVACY-PUBLISH-01：审阅并修复隐私后公开两个源码项目，替代旧“源码必须私有”的受众目标。本副本是已脱敏本地候选，原历史／工作目录仍私有且未改写，仓库改名／干净公开版本方案待具体选择；尚未公开或推送。新公开提交必须使用noreply并仅从干净副本创建，不能重新推入旧私有历史。全部应用／迁移／锁／契约／夹具字节保留，真实业务／模型／部署门槛不解除；本轮仅执行用户明确请求的隐私扫描，不恢复应用测试。见docs/source_publication.md。
+2026-10-14 PRIVACY-PUBLISH-01已完成源码公开：用户明确选择保留私有历史、公开同名干净版本。新公开库study-admissions-agent（ID1418914840），默认分支codex/privacy-release，公开工作目录D:/Projects/study-public；原ID1400234431改名study-admissions-agent-private-archive，保持PRIVATE并只读归档。原D:/Projects/study和原镜像origin已指向备份，原文件／历史保留。只从干净副本用GitHub noreply创建公开提交，不合并／推入旧私有历史，不强推；后续正常Task仍按持续授权普通保存。原“源码必须私有”规则为历史，已被本次源码公开授权替代；真实业务／模型／部署门槛及不用应用测试的要求保持。初始公开CI运行0，全部应用／迁移／锁／契约／夹具字节保留。见docs/source_publication.md。
 
 2026-10-14 SEARCH-SELECT-01源码完成：学校/专业显式搜索与级联选择替代手填UUID，身份来自当前正式T20发布证明，默认目录None空缺口；前端仅用所选真实UUID/ref、父子/水位/取消/generation及本地上下文pin，学院学科未适配禁用。无研究/DEMO补项、无新表/迁移/旧generated/M0改变；培养/毕业数据仍空。所有测试/Lint/TypeCheck/Build/import/SQL/HTTP/浏览器/校验/服务重启未执行（用户要求），未装配真实目录。见docs/school_program_search.md；27文件文档同步/PRIVATE保存后停止。
 
@@ -187,7 +187,7 @@
 
 ## Git仓库与持续提交推送授权
 
-历史P04授权的源码仓库`https://github.com/chanbilly-lab/study-admissions-agent`一直私有；2026-10-14用户新要求隐私审阅后公开源码。本候选发布方式／仓库管理选择待确认，未改变远程。获批后只从已审干净副本普通推送，旧历史备份必须保持私有，不能推入公库。只推已核实的origin和当前工作分支，新工作分支仍codex/前缀；源码公开不授权业务部署、真实处理或事实发布，不擅自强推／改写原commit／调整其他remote。
+2026-10-14用户已明确授权经过本轮审阅的干净源码公开。当前源码仓库`https://github.com/chanbilly-lab/study-admissions-agent`（新ID1418914840）为PUBLIC，默认分支codex/privacy-release，正常公开工作目录D:/Projects/study-public。只推送到已核实的当前origin／明确分支，并使用GitHub noreply；新分支保持codex/前缀。原仓库ID1400234431仅作PRIVATE只读备份，旧工作目录／镜像origin指向study-admissions-agent-private-archive，不得推入公库。早期main／必须私有的源码规则是历史；仓库公开不代表服务部署或真实事实发布，不授权强推、重写历史、其他remote／可见性调整或共享真实资料。
 
 每轮一个Task全部验收、CHANGELOG/tasks及受影响文档同步后，执行提交和普通push，无须再次请求已经给出的授权。开始时记录Git基线和已有暂存内容；只暂存当前Task审查过的必要文件或hunks，不用`git add -A`/`git add .`纳入无关用户改动。若同一文件混有用户改动，只提交明确属于本Task的hunks；不能可靠区分时保留用户内容并报告上传边界，不替用户提交。初始P04只上传人工核对的项目清单，不编造旧Task单独commit。
 
